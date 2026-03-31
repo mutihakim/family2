@@ -19,6 +19,7 @@ class ResolveTenant
 
         $request->attributes->set('currentTenant', $tenant);
         app()->instance('currentTenant', $tenant);
+        \Illuminate\Support\Facades\URL::defaults(['tenant' => $tenant->slug]);
 
         return $next($request);
     }

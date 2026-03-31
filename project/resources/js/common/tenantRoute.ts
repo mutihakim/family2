@@ -3,11 +3,11 @@ import { usePage } from '@inertiajs/react';
 function buildTenantPath(slug: string | undefined, isSuperadmin: boolean, path = ''): string {
     if (!slug) return isSuperadmin ? '/tenants' : '/tenant-access-required';
     const normalized = path.startsWith('/') ? path : `/${path}`;
-    return `/t/${slug}${normalized}`;
+    return `//${slug}.appsah.my.id${normalized}`;
 }
 
 function tenantSlugFromPath(pathname: string): string | undefined {
-    const match = pathname.match(/^\/t\/([^/]+)/);
+    const match = window.location.hostname.match(/^([^.]+)\.appsah\.my\.id/);
     return match?.[1];
 }
 
@@ -19,5 +19,6 @@ export function useTenantRoute() {
     return {
         to: (path = '') => buildTenantPath(slug, isSuperadmin, path),
         routeTenant: (path = '') => buildTenantPath(slug, isSuperadmin, path),
+        apiTo: (path = '') => `/api/v1/tenants/${slug}${path.startsWith('/') ? path : `/${path}`}`,
     };
 }

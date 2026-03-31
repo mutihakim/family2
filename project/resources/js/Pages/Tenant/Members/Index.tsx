@@ -74,8 +74,8 @@ function MembersIndex({ members: initialMembers, roleOptions }: Props) {
     const [detail, setDetail] = useState<TenantMember | null>(null);
     const [isListView, setIsListView] = useState(false);
 
-    const membersApi = `/api/v1${tenantRoute.to("/members")}`.replace("/t/", "/tenants/");
-    const invitationsApi = `/api/v1${tenantRoute.to("/invitations")}`.replace("/t/", "/tenants/");
+    const membersApi = tenantRoute.apiTo('/members');
+    const invitationsApi = tenantRoute.apiTo('/invitations');
 
     const filteredMembers = useMemo(() => {
         if (!query) return members;

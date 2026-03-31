@@ -34,7 +34,7 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request): RedirectResponse
+    public function store(LoginRequest $request): \Symfony\Component\HttpFoundation\Response
     {
         $request->authenticate();
 
@@ -59,11 +59,13 @@ class AuthenticatedSessionController extends Controller
                 ->first();
 
             if ($membership?->tenant?->slug) {
-                $target = "/t/{$membership->tenant->slug}/dashboard";
+                // Generate full absolute URL to subdomain dashboard
+                $target = route('tenant.dashboard', ['tenant' => $membership->tenant->slug]);
             }
         }
 
-        return redirect()->intended($target);
+        $url = session()->pull('url.intended', $target);
+        return Inertia::location($url);
     }
 
     /**
@@ -77,6 +79,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return Inertia::location('/');
+        return Inertia::location(config('app.url'));
     }
 }

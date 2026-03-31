@@ -27,7 +27,7 @@ function WhatsAppSettingsPage() {
     const page = usePage<PageProps>();
     const tenantId = page.props.currentTenant?.id ?? null;
     const tenantRoute = useTenantRoute();
-    const apiBase = `/api/v1${tenantRoute.to('/whatsapp')}`.replace('/t/', '/tenants/');
+    const apiBase = tenantRoute.apiTo('/whatsapp');
     const [loading, setLoading] = useState(false);
     const [showRemoveConfirm, setShowRemoveConfirm] = useState(false);
     const [session, setSession] = useState<SessionPayload | null>(null);

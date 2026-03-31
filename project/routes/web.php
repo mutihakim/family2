@@ -59,7 +59,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/settings/theme', ThemePreferenceController::class)->name('settings.theme.update');
 
     Route::middleware(['tenant.initialize', 'tenant.access', 'permission.team'])
-        ->prefix('/t/{tenant}')
+        ->domain('{tenant}.'.env('APP_DOMAIN', 'appsah.my.id'))
         ->group(function () {
             Route::get('/dashboard', [TenantWorkspaceController::class, 'dashboard'])
                 ->middleware('tenant.feature:dashboard,view')
@@ -85,7 +85,7 @@ Route::middleware('auth')->group(function () {
             Route::get('/whatsapp/chats', [TenantWorkspaceController::class, 'whatsappChats'])
                 ->middleware('tenant.feature:whatsapp.chats,view')
                 ->name('tenant.whatsapp.chats');
-            Route::get('/settings', fn () => redirect("/t/".request()->segment(2)."/settings/profile"))
+            Route::get('/settings', fn () => redirect()->route('tenant.settings.profile', tenant('slug')))
                 ->name('tenant.settings');
             Route::get('/settings/profile', [TenantSettingsController::class, 'profile'])->name('tenant.settings.profile');
             Route::patch('/settings/profile', [TenantSettingsController::class, 'updateProfile'])->name('tenant.settings.profile.update');

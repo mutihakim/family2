@@ -136,10 +136,12 @@ class HandleInertiaRequests extends Middleware
             'features' => [
                 'whatsapp' => (bool) config('whatsapp.enabled', false),
             ],
-            'ziggy' => fn () => [
-                ...(new Ziggy)->toArray(),
+            'ziggy' => fn () => array_merge((new Ziggy)->toArray(), [
                 'location' => $request->url(),
-            ],
+                'defaults' => [
+                    'tenant' => $tenant ? $tenant->slug : null,
+                ],
+            ]),
         ];
     }
 }

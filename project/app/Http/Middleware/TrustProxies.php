@@ -12,7 +12,7 @@ class TrustProxies extends Middleware
      *
      * @var array<int, string>|string|null
      */
-    protected $proxies;
+    protected $proxies = '*';
 
     /**
      * The headers that should be used to detect proxies.
@@ -25,4 +25,21 @@ class TrustProxies extends Middleware
         Request::HEADER_X_FORWARDED_PORT |
         Request::HEADER_X_FORWARDED_PROTO |
         Request::HEADER_X_FORWARDED_AWS_ELB;
+
+    /**
+     * Set the trusted proxies.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  string|null  $proxies
+     * @return void
+     */
+    protected function setTrustedProxies($proxies)
+    {
+        parent::setTrustedProxies($proxies);
+        
+        // Force HTTPS if X-Forwarded-Proto is https
+        if (request()->header('X-Forwarded-Proto') === 'https') {
+            $_SERVER['HTTPS'] = 'on';
+        }
+    }
 }

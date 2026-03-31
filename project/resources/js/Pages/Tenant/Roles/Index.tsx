@@ -57,7 +57,7 @@ function humanizeCode(value: string) {
 export default function RolesIndex({ roles: initialRoles, permissionModules }: Props) {
     const { t } = useTranslation();
     const tenantRoute = useTenantRoute();
-    const apiBase = `/api/v1${tenantRoute.to("/roles")}`.replace("/t/", "/tenants/");
+    const apiBase = tenantRoute.apiTo('/roles');
 
     const [roles, setRoles] = useState<RoleItem[]>(initialRoles ?? []);
     const [modules, setModules] = useState<PermissionModules>(permissionModules ?? {});

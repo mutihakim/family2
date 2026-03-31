@@ -54,6 +54,6 @@ class TenantSelectorAccessTest extends TestCase
 
         $this->actingAs($user)
             ->get('/tenants')
-            ->assertRedirect('/t/tenant-a/dashboard');
+            ->assertRedirect(route('tenant.dashboard', 'tenant-a'));
     }
 }

@@ -63,7 +63,7 @@ export function buildShellNavigation(props: SharedPageProps): ShellNavSection[] 
     const features = props.features ?? {};
     const isSuperadmin = Boolean(props.auth?.is_superadmin || props.auth?.user?.is_superadmin);
 
-    const workspaceBase = hasTenant ? `/t/${tenantSlug}` : (isSuperadmin ? '/admin/dashboard' : '/tenant-access-required');
+    const workspaceBase = hasTenant ? '' : (isSuperadmin ? '/admin/dashboard' : '/tenant-access-required');
     const workspaceUpgradeHref = (moduleKey: string) => upgradeHref(workspaceBase, moduleKey, hasTenant);
 
     const accountChildren: ShellNavItem[] = [

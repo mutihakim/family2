@@ -43,7 +43,7 @@ function InvitationsIndex() {
     const [loading, setLoading] = useState(false);
     const [form, setForm] = useState({ ...defaultForm, role_code: roleOptions[0] ?? 'member' });
 
-    const apiBase = `/api/v1${tenantRoute.to('/invitations')}`.replace('/t/', '/tenants/');
+    const apiBase = tenantRoute.apiTo('/invitations');
 
     function showApiError(err: any, fallback: string) {
         const parsed = parseApiError(err, fallback);

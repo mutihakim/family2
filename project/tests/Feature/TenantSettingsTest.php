@@ -23,15 +23,15 @@ class TenantSettingsTest extends TestCase
         [$owner, $tenant] = $this->provisionTenant();
 
         $this->actingAs($owner)
-            ->get("/t/{$tenant->slug}/settings")
-            ->assertRedirect("/t/{$tenant->slug}/settings/profile");
+            ->get(route('tenant.settings', $tenant->slug))
+            ->assertRedirect(route('tenant.settings.profile', $tenant->slug));
 
         $this->actingAs($owner)
-            ->get("/t/{$tenant->slug}/settings/profile")
+            ->get(route('tenant.settings.profile', $tenant->slug))
             ->assertOk();
 
         $this->actingAs($owner)
-            ->patch("/t/{$tenant->slug}/settings/profile", [
+            ->patch(route('tenant.settings.profile', $tenant->slug), [
                 'display_name' => 'Cabinet Pro',
                 'legal_name' => 'PT Cabinet Pro',
                 'registration_number' => 'REG-123',
@@ -48,25 +48,25 @@ class TenantSettingsTest extends TestCase
                 'postal_code' => '10220',
                 'country_code' => 'ID',
             ])
-            ->assertRedirect("/t/{$tenant->slug}/settings/profile");
+            ->assertRedirect(route('tenant.settings.profile', $tenant->slug));
 
         $this->assertSame('Cabinet Pro', $tenant->fresh()->display_name);
 
         $this->actingAs($owner)
-            ->patch("/t/{$tenant->slug}/settings/localization", [
+            ->patch(route('tenant.settings.localization', $tenant->slug), [
                 'locale' => 'en',
                 'timezone' => 'Asia/Singapore',
                 'currency_code' => 'USD',
                 'country_code' => 'SG',
             ])
-            ->assertRedirect("/t/{$tenant->slug}/settings/localization");
+            ->assertRedirect(route('tenant.settings.localization', $tenant->slug));
 
         $tenant->refresh();
         $this->assertSame('en', $tenant->locale);
         $this->assertSame('USD', $tenant->currency_code);
 
         $this->actingAs($owner)
-            ->patch("/t/{$tenant->slug}/settings/billing", [
+            ->patch(route('tenant.settings.billing', $tenant->slug), [
                 'billing_contact_name' => 'Finance Team',
                 'billing_email' => 'finance@cabinet.test',
                 'legal_name' => 'PT Cabinet Pro',
@@ -78,7 +78,7 @@ class TenantSettingsTest extends TestCase
                 'postal_code' => '10220',
                 'country_code' => 'ID',
             ])
-            ->assertRedirect("/t/{$tenant->slug}/settings/billing");
+            ->assertRedirect(route('tenant.settings.billing', $tenant->slug));
 
         $this->assertSame('Finance Team', $tenant->fresh()->billing_contact_name);
     }
@@ -102,7 +102,7 @@ class TenantSettingsTest extends TestCase
         $memberUser->assignRole('member');
 
         $response = $this->actingAs($memberUser)
-            ->get("/t/{$tenant->slug}/settings/profile");
+            ->get(route('tenant.settings.profile', $tenant->slug));
 
         $response->assertForbidden();
         $response->assertInertia(fn (Assert $page) => $page->component('Tenant/Forbidden'));
@@ -114,10 +114,10 @@ class TenantSettingsTest extends TestCase
         [$owner, $tenant] = $this->provisionTenant();
 
         $this->actingAs($owner)
-            ->post("/t/{$tenant->slug}/settings/branding", [
+            ->post(route('tenant.settings.branding', $tenant->slug), [
                 'logo_light' => UploadedFile::fake()->image('tenant-light.png', 320, 100),
             ])
-            ->assertRedirect("/t/{$tenant->slug}/settings/branding");
+            ->assertRedirect(route('tenant.settings.branding', $tenant->slug));
 
         $tenant->refresh();
         $this->assertSame("tenants/{$tenant->id}/branding/logo-light.png", $tenant->logo_light_path);
@@ -126,10 +126,10 @@ class TenantSettingsTest extends TestCase
         $oldPath = $tenant->logo_light_path;
 
         $this->actingAs($owner)
-            ->post("/t/{$tenant->slug}/settings/branding", [
+            ->post(route('tenant.settings.branding', $tenant->slug), [
                 'logo_light' => UploadedFile::fake()->image('tenant-light.jpg', 320, 100),
             ])
-            ->assertRedirect("/t/{$tenant->slug}/settings/branding");
+            ->assertRedirect(route('tenant.settings.branding', $tenant->slug));
 
         $tenant->refresh();
         $this->assertSame("tenants/{$tenant->id}/branding/logo-light.jpg", $tenant->logo_light_path);
@@ -143,17 +143,17 @@ class TenantSettingsTest extends TestCase
         [$owner, $tenant] = $this->provisionTenant();
 
         $this->actingAs($owner)
-            ->post("/t/{$tenant->slug}/settings/branding", [
+            ->post(route('tenant.settings.branding', $tenant->slug), [
                 'logo_icon' => UploadedFile::fake()->image('logo-icon.png', 128, 128),
             ])
-            ->assertRedirect("/t/{$tenant->slug}/settings/branding");
+            ->assertRedirect(route('tenant.settings.branding', $tenant->slug));
 
         $tenant->refresh();
         Storage::disk('public')->assertExists($tenant->logo_icon_path);
 
         $this->actingAs($owner)
-            ->delete("/t/{$tenant->slug}/settings/branding/logo_icon")
-            ->assertRedirect("/t/{$tenant->slug}/settings/branding");
+            ->delete(route('tenant.settings.branding.remove', ['tenant' => $tenant->slug, 'slot' => 'logo_icon']))
+            ->assertRedirect(route('tenant.settings.branding', $tenant->slug));
 
         $tenant->refresh();
         $this->assertNull($tenant->logo_icon_path);
@@ -166,12 +166,12 @@ class TenantSettingsTest extends TestCase
         [$owner, $tenant] = $this->provisionTenant();
 
         $this->actingAs($owner)
-            ->from("/t/{$tenant->slug}/settings/branding")
-            ->post("/t/{$tenant->slug}/settings/branding", [
+            ->from(route('tenant.settings.branding', $tenant->slug))
+            ->post(route('tenant.settings.branding', $tenant->slug), [
                 'favicon' => UploadedFile::fake()->create('favicon.txt', 10, 'text/plain'),
             ])
             ->assertSessionHasErrors('favicon')
-            ->assertRedirect("/t/{$tenant->slug}/settings/branding");
+            ->assertRedirect(route('tenant.settings.branding', $tenant->slug));
     }
 
     public function test_deleting_tenant_removes_branding_directory(): void
@@ -180,11 +180,11 @@ class TenantSettingsTest extends TestCase
         [$owner, $tenant] = $this->provisionTenant();
 
         $this->actingAs($owner)
-            ->post("/t/{$tenant->slug}/settings/branding", [
+            ->post(route('tenant.settings.branding', $tenant->slug), [
                 'logo_dark' => UploadedFile::fake()->image('logo-dark.png', 320, 100),
                 'favicon' => UploadedFile::fake()->image('favicon.png', 32, 32),
             ])
-            ->assertRedirect("/t/{$tenant->slug}/settings/branding");
+            ->assertRedirect(route('tenant.settings.branding', $tenant->slug));
 
         Storage::disk('public')->assertExists("tenants/{$tenant->id}/branding/logo-dark.png");
         Storage::disk('public')->assertExists("tenants/{$tenant->id}/branding/favicon.png");

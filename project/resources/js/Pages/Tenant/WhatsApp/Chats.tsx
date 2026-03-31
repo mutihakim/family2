@@ -52,7 +52,7 @@ function WhatsAppChatsPage() {
     const tenantRoute = useTenantRoute();
     const { props } = usePage<any>();
     const tenantId = props.currentTenant?.id ?? null;
-    const apiBase = `/api/v1${tenantRoute.to('/whatsapp')}`.replace('/t/', '/tenants/');
+    const apiBase = tenantRoute.apiTo('/whatsapp');
     const [loading, setLoading] = useState(false);
     const [chats, setChats] = useState<ChatItem[]>([]);
     const [selectedJid, setSelectedJid] = useState<string | null>(null);

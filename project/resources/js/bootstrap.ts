@@ -38,10 +38,10 @@ if (reverbKey) {
     window.Echo = new Echo({
         broadcaster: 'reverb',
         key: reverbKey,
-        wsHost: import.meta.env.VITE_REVERB_HOST,
-        wsPort: Number(import.meta.env.VITE_REVERB_PORT ?? 80),
-        wssPort: Number(import.meta.env.VITE_REVERB_PORT ?? 443),
-        forceTLS: (import.meta.env.VITE_REVERB_SCHEME ?? 'https') === 'https',
+        wsHost: window.location.hostname,
+        wsPort: 443,
+        wssPort: 443,
+        forceTLS: true,
         enabledTransports: ['ws', 'wss'],
         authEndpoint: '/broadcasting/auth',
     });

@@ -74,7 +74,7 @@ export default function EditMember({ member, roleOptions }: Props) {
         return true;
     });
 
-    const apiUrl = `/api/v1${tenantRoute.to(`/members/${member.id}/profile`)}`.replace("/t/", "/tenants/");
+    const apiUrl = tenantRoute.apiTo(`/members/${member.id}/profile`);
 
     function roleLabel(roleCode: string) {
         return t(`tenant.members.roles.${roleCode}`, {

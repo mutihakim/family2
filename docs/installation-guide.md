@@ -142,6 +142,21 @@ server {
 
 ---
 
+### Contoh Konfigurasi Instansi Kedua (Studi Kasus: Toko)
+
+Untuk instalasi **Toko (sahstore.my.id)** yang baru saja kita lakukan, berikut adalah parameter yang digunakan:
+
+| Parameter | Nilai (Toko) | Keterangan |
+| :--- | :--- | :--- |
+| **Domain** | `sahstore.my.id` | Berbeda dari `appsah.my.id` |
+| **DB Name** | `toko_core` | Database PostgreSQL baru |
+| **Port App** | `8016` | Digunakan internal oleh Nginx |
+| **Port Reverb** | `8096` | Port WebSocket Toko |
+| **Port WhatsApp** | `3026` | Port Layanan WhatsApp Toko |
+| **Port Docs** | `8017` | Port Situs Dokumentasi Toko |
+
+---
+
 ## 9. Build Frontend, Migrasi & Menjalankan PM2
 
 Jika file konfigurasi telah siap, eksekusi migrasi dari backend dan build static content.
@@ -159,16 +174,16 @@ npm run docs:build
 
 ### Konfigurasi PM2 Process Name
 
-Karena PM2 mengabaikan direktori jika mendapati proses dengan *"nama yang sama"*, Anda harus memperjelas penamaan proses (contoh `saas2-*`) pada `ecosystem.config.cjs` maupun config lainnya, lalu perbarui *Arguments/Port*-nya:
+Karena PM2 mengabaikan direktori jika mendapati proses dengan *"nama yang sama"*, Anda harus memperjelas penamaan proses (contoh `toko-*`) pada `ecosystem.config.cjs` maupun config lainnya, lalu perbarui *Arguments/Port*-nya:
 
-1. **ecosystem.config.cjs**: Ubah Reverb (`saas2-reverb`, `--port=8096`) dan Queue Worker (`saas2-queue-worker`).
-2. **cabinet-web.config.cjs**: Ubah Web Server menjadi `saas2-web`: `args: "serve --host=0.0.0.0 --port=8016"`.
-3. **services/whatsapp/pm2.config.js**: Ganti nama `saas2-whatsapp`, serta perbarui \`PORT=3026\` dan \`CALLBACK_URL\`.
+1. **ecosystem.config.cjs**: Ubah Reverb (`toko-reverb`, `--port=8096`) dan Queue Worker (`toko-queue-worker`).
+2. **toko-web.config.cjs**: Ubah Web Server menjadi `toko-web`: `args: "serve --host=0.0.0.0 --port=8016"`.
+3. **services/whatsapp/pm2.config.js**: Ganti nama `toko-whatsapp`, serta perbarui `PORT=3026` dan `CALLBACK_URL`.
 
 Jalankan serentak untuk membangkitkan instance Aplikasi Kedua:
 ```bash
 pm2 start ecosystem.config.cjs
-pm2 start cabinet-web.config.cjs
+pm2 start toko-web.config.cjs
 cd ../services/whatsapp && pm2 start pm2.config.js
 
 pm2 save

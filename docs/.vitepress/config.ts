@@ -11,17 +11,17 @@ export default defineConfig({
       provider: 'local',
     },
     nav: [
-      { text: 'Overview', link: '/00-overview' },
-      { text: 'API', link: '/04-api-reference' },
-      { text: 'Testing', link: '/06-testing-quality' },
+      { text: 'Overview', link: '/overview' },
+      { text: 'API', link: '/api-reference' },
+      { text: 'Testing', link: '/testing-quality' },
     ],
     sidebar: [
       {
         text: 'Core',
         items: [
-          { text: '00. Overview', link: '/00-overview' },
-          { text: '01. Quickstart', link: '/01-quickstart' },
-          { text: '02. Architecture', link: '/02-architecture' },
+          { text: 'Overview', link: '/overview' },
+          { text: 'Quickstart', link: '/quickstart' },
+          { text: 'Architecture', link: '/architecture' },
         ],
       },
       {
@@ -35,13 +35,23 @@ export default defineConfig({
         ],
       },
       {
+        text: 'Progress',
+        items: [
+          { text: 'Progress Dashboard', link: '/08-progress/index' },
+          { text: 'RBAC Progress', link: '/08-progress/modules/rbac' },
+          { text: 'i18n Progress', link: '/08-progress/modules/i18n' },
+          { text: 'Subscription Progress', link: '/08-progress/modules/subscription' },
+          { text: 'Changelog 2026-03', link: '/08-progress/changelog/2026-03' },
+        ],
+      },
+      {
         text: 'Reference',
         items: [
-          { text: '04. API Reference', link: '/04-api-reference' },
-          { text: '05. UI Walkthrough', link: '/05-ui-walkthrough' },
-          { text: '06. Testing & Quality', link: '/06-testing-quality' },
-          { text: '07. Extension Guide', link: '/07-extension-guide' },
-          { text: '09. Installation Guide', link: '/09-installation-guide' },
+          { text: 'API Reference', link: '/api-reference' },
+          { text: 'UI Walkthrough', link: '/ui-walkthrough' },
+          { text: 'Testing & Quality', link: '/testing-quality' },
+          { text: 'Extension Guide', link: '/extension-guide' },
+          { text: 'Installation Guide', link: '/installation-guide' },
         ],
       },
     ],

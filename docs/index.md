@@ -6,10 +6,11 @@ Selamat datang di dokumentasi teknis **Family SaaS**. Dokumentasi ini sekarang t
 
 Berikut adalah modul-modul utama yang tersedia:
 
-- 🌍 **[Internationalization (i18n)](./guide/i18n.md)**: Panduan manajemen bahasa dan lokalisasi.
-- 🔐 **[RBAC & Permissions](./guide/rbac.md)**: Dokumentasi Role-Based Access Control.
-- 💳 **[Subscription](./guide/subscription.md)**: Manajemen paket dan kuota langganan.
-- 💬 **[WhatsApp Integration](./guide/whatsapp.md)**: Panduan modul integrasi komunikasi WhatsApp.
+- [🌍 Internationalization (i18n)](./guide/i18n.md)
+- [🔐 RBAC & Permissions](./guide/rbac.md)
+- [💳 Subscription](./guide/subscription.md)
+- [💬 WhatsApp Integration](./guide/whatsapp.md)
+- [📈 Progress Dashboard](./08-progress/index.md)
 
 ## 🚀 Cara Menjalankan Lokal
 

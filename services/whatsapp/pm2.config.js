@@ -8,9 +8,9 @@ module.exports = {
             watch: false,
             max_memory_restart: '512M',
             env: {
-                NODE_ENV: 'local',
+                NODE_ENV: 'production',
                 PORT: 3025,
-                APP_CALLBACK_URL: 'http://146.19.216.195:8015',
+                APP_CALLBACK_URL: 'https://appsah.my.id',
                 WHATSAPP_INTERNAL_TOKEN: 'change-me',
                 WA_AUTH_DIR: './wa-auth',
                 REQUEST_TIMEOUT_MS: 8000,

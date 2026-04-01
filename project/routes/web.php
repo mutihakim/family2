@@ -12,6 +12,7 @@ use App\Http\Controllers\TenantSettingsController;
 use App\Http\Controllers\ThemePreferenceController;
 use App\Http\Controllers\TenantWorkspaceController;
 use App\Http\Controllers\TenantHomeController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -76,7 +77,13 @@ Route::middleware([
     });
 
     // --- TENANT MANAGEMENT AREA (Tenant Subdomains Only) ---
-    // Defined BEFORE Super Admin to ensure subdomains match here first
+    Route::domain('{tenant}.appsah.my.id')->group(function () {
+        Route::middleware('guest')->prefix('admin')->group(function () {
+            Route::get('login', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'create'])->name('tenant.admin.login');
+            Route::post('login', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'store'])->name('tenant.admin.login.store');
+        });
+    });
+
     Route::domain('{tenant}.appsah.my.id')->middleware(['auth', 'verified'])->prefix('admin')->group(function () {
         Route::get('/dashboard', [TenantWorkspaceController::class, 'dashboard'])->name('tenant.dashboard');
 

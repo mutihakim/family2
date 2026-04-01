@@ -21,6 +21,7 @@ class AuthenticatedSessionController extends Controller
     public function create(): Response
     {
         $invitationToken = request()->query('invitation_token');
+        $isAdmin = request()->routeIs('tenant.admin.login');
 
         return Inertia::render('Auth/Login', [
             'canResetPassword' => Route::has('password.request'),
@@ -28,6 +29,7 @@ class AuthenticatedSessionController extends Controller
             'turnstileSiteKey' => app(TurnstileService::class)->siteKey(),
             'turnstileEnabled' => app(TurnstileService::class)->enabled(),
             'invitationToken' => $invitationToken,
+            'isAdmin' => $isAdmin,
         ]);
     }
 
@@ -68,7 +70,16 @@ class AuthenticatedSessionController extends Controller
                         break;
                     }
                 }
-                $target = "https://{$membership->tenant->slug}.{$centralDomain}/admin/dashboard";
+                if (str_ends_with($host, ".{$centralDomain}") && $host !== "www.{$centralDomain}") {
+                    // Check if they used the admin login route (GET or POST)
+                    if ($request->routeIs('tenant.admin.login') || $request->routeIs('tenant.admin.login.store')) {
+                        $target = "/admin/dashboard";
+                    } else {
+                        $target = "/";
+                    }
+                } else {
+                    $target = "https://{$membership->tenant->slug}.{$centralDomain}/admin/dashboard";
+                }
             }
         }
 

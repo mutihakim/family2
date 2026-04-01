@@ -21,3 +21,5 @@ dist/
 services/whatsapp/.wwebjs_cache/
 services/whatsapp/wa-auth/
 velzon/Master/public/build/
+.qwen/
+build_output.txt

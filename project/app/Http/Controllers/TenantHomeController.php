@@ -14,11 +14,26 @@ class TenantHomeController extends Controller
     public function index(Request $request): Response
     {
         $tenant = tenant();
+        $user = $request->user();
 
-        return Inertia::render('Tenant/Home', [
-            'tenantName' => $tenant->name ?? $tenant->id,
-            'membersCount' => $tenant->members()->count(),
-            // You can add more data here like family description, etc.
+        // If authenticated as a member/admin, show the Frontend App Dashboard
+        if ($user) {
+            return Inertia::render('Tenant/Frontend/App', [
+                'tenantName' => $tenant->name ?? $tenant->slug,
+                'member' => $request->attributes->get('currentTenantMember'),
+            ]);
+        }
+
+        // Otherwise show the Public Landing Page
+        return Inertia::render('Tenant/Frontend/Landing', [
+            'tenant' => [
+                'name' => $tenant->name ?? $tenant->slug,
+                'display_name' => $tenant->display_name,
+                'slug' => $tenant->slug,
+            ],
+            'stats' => [
+                'members_count' => $tenant->members()->count(),
+            ],
         ]);
     }
 }

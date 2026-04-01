@@ -6,7 +6,7 @@ import logoLight from "../../../images/appsah-logo-light.png";
 import TurnstileField from '../../Components/Common/TurnstileField';
 import GuestLayout from '../../Layouts/GuestLayout';
 
-export default function Login({ status, canResetPassword, turnstileEnabled, turnstileSiteKey, invitationToken }: any) {
+export default function Login({ status, canResetPassword, turnstileEnabled, turnstileSiteKey, invitationToken, isAdmin }: any) {
 
     const [passwordShow, setPasswordShow] = useState<boolean>(false);
     const { data, setData, processing, errors, reset } = useForm({
@@ -27,7 +27,7 @@ export default function Login({ status, canResetPassword, turnstileEnabled, turn
     const submit = (e: any) => {
         e.preventDefault();
 
-        router.post(route('login'), data, {
+        router.post(isAdmin ? route('tenant.admin.login') : route('login'), data, {
             preserveState: false,
         });
     };
@@ -56,8 +56,8 @@ export default function Login({ status, canResetPassword, turnstileEnabled, turn
                                 <Card className="mt-4">
                                     <Card.Body className='p-4'>
                                         <div className="text-center mt-2">
-                                            <h5 className="text-primary">Welcome Back !</h5>
-                                            <p className="text-muted">Sign in to continue to appsah.</p>
+                                            <h5 className="text-primary">{isAdmin ? 'Admin Portal' : 'Member Access'}</h5>
+                                            <p className="text-muted">{isAdmin ? 'Sign in to manage your tenant.' : 'Sign in to access your family app.'}</p>
                                         </div>
                                         {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
                                         <div className='p-2 mt-4'>
@@ -104,7 +104,7 @@ export default function Login({ status, canResetPassword, turnstileEnabled, turn
                                                             autoComplete="current-password"
                                                             onChange={(e: any) => setData('password', e.target.value)}
                                                         />
-                                                       
+
                                                         <Form.Control.Feedback type="invalid" className='d-block mt-2'> {errors.password} </Form.Control.Feedback>
                                                         <button className="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted" type="button" id="password-addon" onClick={() => setPasswordShow(!passwordShow)}><i className="ri-eye-fill align-middle"></i></button>
                                                     </div>
@@ -151,40 +151,44 @@ export default function Login({ status, canResetPassword, turnstileEnabled, turn
                                                     </Button>
                                                 </div>
 
-                                                <div className="mt-4 text-center">
-                                                    <div className="signin-other-title">
-                                                        <h5 className="fs-13 mb-4 title">Sign In with</h5>
-                                                    </div>
-                                                    <div>
-                                                        <Link
-                                                            href="#"
-                                                            className="btn btn-primary btn-icon me-1"
+                                                {!isAdmin && (
+                                                    <div className="mt-4 text-center">
+                                                        <div className="signin-other-title">
+                                                            <h5 className="fs-13 mb-4 title">Sign In with</h5>
+                                                        </div>
+                                                        <div>
+                                                            <Link
+                                                                href="#"
+                                                                className="btn btn-primary btn-icon me-1"
 
-                                                        >
-                                                            <i className="ri-facebook-fill fs-16" />
-                                                        </Link>
-                                                        <Link
-                                                            href={route('auth.social.redirect', { provider: 'google' })}
-                                                            className="btn btn-danger btn-icon me-1"
+                                                            >
+                                                                <i className="ri-facebook-fill fs-16" />
+                                                            </Link>
+                                                            <Link
+                                                                href={route('auth.social.redirect', { provider: 'google' })}
+                                                                className="btn btn-danger btn-icon me-1"
 
-                                                        >
-                                                            <i className="ri-google-fill fs-16" />
-                                                        </Link>
-                                                        <Link href={route('auth.social.redirect', { provider: 'github' })} className="btn btn-dark btn-icon me-1">
-                                                            <i className="ri-github-fill fs-16"></i>
-                                                        </Link>{" "}
-                                                        <Button variant="info" className="btn-icon btn-info">
-                                                            <i className="ri-twitter-fill fs-16"></i>
-                                                        </Button>
+                                                            >
+                                                                <i className="ri-google-fill fs-16" />
+                                                            </Link>
+                                                            <Link href={route('auth.social.redirect', { provider: 'github' })} className="btn btn-dark btn-icon me-1">
+                                                                <i className="ri-github-fill fs-16"></i>
+                                                            </Link>{" "}
+                                                            <Button variant="info" className="btn-icon btn-info">
+                                                                <i className="ri-twitter-fill fs-16"></i>
+                                                            </Button>
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                )}
                                             </Form>
                                         </div>
                                     </Card.Body>
                                 </Card>
-                                <div className="mt-4 text-center">
-                                    <p className="mb-0">Don't have an account ? <Link href={invitationToken ? `${route('register')}?invitation_token=${invitationToken}` : route('register')} className="fw-semibold text-primary text-decoration-underline"> Signup </Link> </p>
-                                </div>
+                                {!isAdmin && (
+                                    <div className="mt-4 text-center">
+                                        <p className="mb-0">Don't have an account ? <Link href={invitationToken ? `${route('register')}?invitation_token=${invitationToken}` : route('register')} className="fw-semibold text-primary text-decoration-underline"> Signup </Link> </p>
+                                    </div>
+                                )}
                             </Col>
                         </Row>
                     </Container>

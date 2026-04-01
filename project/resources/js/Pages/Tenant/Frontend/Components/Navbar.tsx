@@ -1,14 +1,10 @@
-import { Link } from '@inertiajs/react';
+import { Link, usePage } from '@inertiajs/react';
 import React, { useEffect, useMemo, useState } from 'react';
 import { Collapse, Container, NavbarToggle } from 'react-bootstrap';
-
-// Import Images
-import logodark from '../../../../images/appsah-logo-dark.png';
-import logolight from '../../../../images/appsah-logo-light.png';
+import { SharedPageProps } from '../../../../types/page';
 
 const sectionLinks = [
     { id: 'hero', label: 'Home' },
-    { id: 'services', label: 'Services' },
     { id: 'features', label: 'Features' },
     { id: 'plans', label: 'Plans' },
     { id: 'reviews', label: 'Reviews' },
@@ -17,6 +13,8 @@ const sectionLinks = [
 ] as const;
 
 const Navbar = () => {
+    const { props } = usePage<SharedPageProps>();
+    const tenant = props.currentTenant;
     const [isOpenMenu, setIsOpenMenu] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
     const [activeSection, setActiveSection] = useState<(typeof sectionLinks)[number]['id']>('hero');
@@ -78,9 +76,8 @@ const Navbar = () => {
         <React.Fragment>
             <nav className={`navbar navbar-expand-lg navbar-landing fixed-top ${navClass}`.trim()} id="navbar">
                 <Container>
-                    <Link className="navbar-brand" href="/landing">
-                        <img src={logodark} className="card-logo card-logo-dark" alt="logo dark" height="17" />
-                        <img src={logolight} className="card-logo card-logo-light" alt="logo light" height="17" />
+                    <Link className="navbar-brand" href="/">
+                        <span className="fw-bold fs-20 text-primary">{tenant?.presentable_name || tenant?.name || 'appsah'}</span>
                     </Link>
 
                     <NavbarToggle
@@ -111,11 +108,8 @@ const Navbar = () => {
                             </ul>
 
                             <div className="mt-3 mt-lg-0">
-                                <Link href="/login" className="btn btn-link fw-medium text-decoration-none text-body">
-                                    Sign in
-                                </Link>
-                                <Link href="/register" className="btn btn-primary">
-                                    Sign Up
+                                <Link href="/login" className="btn btn-primary px-4 rounded-pill">
+                                    Login
                                 </Link>
                             </div>
                         </div>

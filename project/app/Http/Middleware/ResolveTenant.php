@@ -18,6 +18,11 @@ class ResolveTenant
             $host = $request->getHost();
             $centralDomains = config('tenancy.central_domains', []);
             
+            // Skip identification if host is exactly one of the central domains
+            if (in_array($host, $centralDomains)) {
+                return $next($request);
+            }
+
             $subdomain = null;
             foreach ($centralDomains as $centralDomain) {
                 if (str_ends_with($host, '.' . $centralDomain)) {

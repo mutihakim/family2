@@ -24,7 +24,24 @@ Route::get('/', function () {
 Route::get('/landing', function () {
     return Inertia::render('Landing/OnePage/index');
 })->name('landing');
+
+Route::get('/', function (\Illuminate\Http\Request $request) {
+    if (in_array($request->getHost(), config('tenancy.central_domains'))) {
+        return Inertia::render('Landing/OnePage/index');
+    }
+    
+    // For tenant domains, ensure tenancy is initialized if not already
+    if (!tenancy()->initialized) {
+        // ResolveTenant middleware should have done this, but as a fallback:
+        $middleware = new \App\Http\Middleware\ResolveTenant();
+        $middleware->handle($request, function() {});
+    }
+
+    return app(App\Http\Controllers\TenantHomeController::class)->index($request);
+})->name('home');
+
 Route::get('/health', fn () => response()->json(['ok' => true]));
+
 Route::get('/test-broadcast', function() {
     event(new \App\Events\WhatsappMessageReceived(tenantId: 4));
     return 'Broadcast Sent!';
@@ -69,9 +86,6 @@ Route::middleware([
     'web',
     'tenant.resolve',
 ])->group(function () {
-
-    // Public Tenant Routes
-    Route::get('/', [TenantHomeController::class, 'index'])->name('tenant.home');
 
     // Authenticated Tenant Routes
     Route::middleware(['auth', 'verified'])->group(function () {

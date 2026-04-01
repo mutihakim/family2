@@ -25,11 +25,12 @@ export default defineConfig({
         ],
       },
       {
-        text: 'Features',
+        text: 'Guides & Features',
         items: [
-          { text: 'RBAC', link: '/03-features/rbac' },
-          { text: 'i18n', link: '/03-features/i18n' },
-          { text: 'Subscription', link: '/03-features/subscription' },
+          { text: 'RBAC', link: '/guide/rbac' },
+          { text: 'i18n', link: '/guide/i18n' },
+          { text: 'Subscription', link: '/guide/subscription' },
+          { text: 'WhatsApp Integration', link: '/guide/whatsapp' },
           { text: 'Tenant Settings', link: '/03-features/tenant-settings' },
         ],
       },
@@ -41,16 +42,6 @@ export default defineConfig({
           { text: '06. Testing & Quality', link: '/06-testing-quality' },
           { text: '07. Extension Guide', link: '/07-extension-guide' },
           { text: '09. Installation Guide', link: '/09-installation-guide' },
-        ],
-      },
-      {
-        text: 'Progress',
-        items: [
-          { text: '08. Progress Dashboard', link: '/08-progress/index' },
-          { text: 'RBAC Progress', link: '/08-progress/modules/rbac' },
-          { text: 'i18n Progress', link: '/08-progress/modules/i18n' },
-          { text: 'Subscription Progress', link: '/08-progress/modules/subscription' },
-          { text: 'Changelog 2026-03', link: '/08-progress/changelog/2026-03' },
         ],
       },
     ],

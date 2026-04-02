@@ -77,10 +77,12 @@ class AuthenticatedSessionController extends Controller
 
                 if (str_ends_with($host, ".{$matchedDomain}") && $host !== "www.{$matchedDomain}") {
                     // Already on a tenant subdomain
+                    // /admin/login → admin dashboard (free theme)
+                    // /login (public) → member hub (locked horizontal theme)
                     if ($request->routeIs('tenant.admin.login') || $request->routeIs('tenant.admin.login.store')) {
                         $target = "/admin/dashboard";
                     } else {
-                        $target = "/";
+                        $target = "/hub";
                     }
                 } else {
                     // On central domain, redirect to their tenant's subdomain

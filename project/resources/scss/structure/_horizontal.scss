@@ -12,7 +12,7 @@
 
         .layout-width,
         .container-fluid {
-            max-width: 90%;
+            max-width: 98%;
             margin: 0 auto;
         }
 
@@ -22,7 +22,7 @@
     }
 
     .horizontal-logo {
-        padding-left: calc(#{$grid-gutter-width} * 0.5);
+        padding-left: 0;
 
         @media (max-width: 1024.98px) {
             padding-left: $grid-gutter-width;
@@ -50,6 +50,7 @@
 
         .navbar-nav {
             flex-direction: row;
+            justify-content: flex-start;
 
             .nav-sm {
                 padding-left: 0;
@@ -113,7 +114,7 @@
                 }
             }
 
-            >li:nth-of-type(2) {
+            >li:nth-of-type(1) {
                 >.nav-link.menu-link {
                     padding-left: 0;
                 }

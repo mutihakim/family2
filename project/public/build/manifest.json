@@ -1,22 +1,22 @@
 {
-  "_AppShellLayout-!~{01z}~.js": {
-    "file": "assets/AppShellLayout-Bxv5fQ1d.css",
-    "src": "_AppShellLayout-!~{01z}~.js"
+  "_AppShellLayout-!~{01y}~.js": {
+    "file": "assets/AppShellLayout-D3XH-TW-.css",
+    "src": "_AppShellLayout-!~{01y}~.js"
   },
-  "_AppShellLayout-Bd43HZZL.js": {
-    "file": "assets/AppShellLayout-Bd43HZZL.js",
+  "_AppShellLayout-DfQ4yzwi.js": {
+    "file": "assets/AppShellLayout-DfQ4yzwi.js",
     "name": "AppShellLayout",
     "imports": [
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
       "_app-vendor-CD-HSM4U.js",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_ui-kit-D7lob7ES.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_avatar-1-PHP4S1R6.js"
     ],
     "css": [
-      "assets/AppShellLayout-Bxv5fQ1d.css"
+      "assets/AppShellLayout-D3XH-TW-.css"
     ],
     "assets": [
       "assets/favicon-Tl-PrZVt.ico",
@@ -80,22 +80,32 @@
       "_ui-kit-D7lob7ES.js"
     ]
   },
-  "_TenantLayout-TIqFhhsH.js": {
-    "file": "assets/TenantLayout-TIqFhhsH.js",
+  "_TenantLayout-DB2iwJEO.js": {
+    "file": "assets/TenantLayout-DB2iwJEO.js",
     "name": "TenantLayout",
     "imports": [
       "_react-vendor-U9lOKbmj.js",
-      "_AppShellLayout-Bd43HZZL.js"
+      "_AppShellLayout-DfQ4yzwi.js"
     ]
   },
-  "_TenantPageTitle-BN0a_Vv-.js": {
-    "file": "assets/TenantPageTitle-BN0a_Vv-.js",
+  "_TenantMemberLayout-D_1e_W1G.js": {
+    "file": "assets/TenantMemberLayout-D_1e_W1G.js",
+    "name": "TenantMemberLayout",
+    "imports": [
+      "_react-vendor-U9lOKbmj.js",
+      "node_modules/@inertiajs/react/dist/index.esm.js",
+      "_TenantPageTitle-COiiRnGC.js",
+      "_AppShellLayout-DfQ4yzwi.js"
+    ]
+  },
+  "_TenantPageTitle-COiiRnGC.js": {
+    "file": "assets/TenantPageTitle-COiiRnGC.js",
     "name": "TenantPageTitle",
     "imports": [
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
       "_tenantRoute-BZRc2tXo.js",
-      "_i18n-BdIFeHfi.js"
+      "_i18n-B0KOix4m.js"
     ]
   },
   "_TurnstileField-BbXhH9rn.js": {
@@ -105,20 +115,20 @@
       "_react-vendor-U9lOKbmj.js"
     ]
   },
-  "_apiError-RjeG3Vkk.js": {
-    "file": "assets/apiError-RjeG3Vkk.js",
+  "_apiError-C3sgb2fG.js": {
+    "file": "assets/apiError-C3sgb2fG.js",
     "name": "apiError",
     "imports": [
-      "_i18n-BdIFeHfi.js"
+      "_i18n-B0KOix4m.js"
     ]
   },
   "_app-vendor-CD-HSM4U.js": {
     "file": "assets/app-vendor-CD-HSM4U.js",
     "name": "app-vendor"
   },
-  "_autoplay-!~{01J}~.js": {
+  "_autoplay-!~{01I}~.js": {
     "file": "assets/autoplay-BHcSP5WY.css",
-    "src": "_autoplay-!~{01J}~.js"
+    "src": "_autoplay-!~{01I}~.js"
   },
   "_autoplay-Dm9EhYib.js": {
     "file": "assets/autoplay-Dm9EhYib.js",
@@ -148,12 +158,12 @@
     "file": "assets/bootstrap-ClcOgKQg.js",
     "name": "bootstrap"
   },
-  "_effect-fade-!~{01K}~.js": {
+  "_effect-fade-!~{01J}~.js": {
     "file": "assets/effect-fade-DyjU0h27.css",
-    "src": "_effect-fade-!~{01K}~.js"
+    "src": "_effect-fade-!~{01J}~.js"
   },
-  "_i18n-BdIFeHfi.js": {
-    "file": "assets/i18n-BdIFeHfi.js",
+  "_i18n-B0KOix4m.js": {
+    "file": "assets/i18n-B0KOix4m.js",
     "name": "i18n",
     "imports": [
       "_react-vendor-U9lOKbmj.js"
@@ -182,11 +192,11 @@
       "_react-vendor-U9lOKbmj.js"
     ]
   },
-  "_invitationError-DgxK6FZK.js": {
-    "file": "assets/invitationError-DgxK6FZK.js",
+  "_invitationError-DMh477eG.js": {
+    "file": "assets/invitationError-DMh477eG.js",
     "name": "invitationError",
     "imports": [
-      "_i18n-BdIFeHfi.js"
+      "_i18n-B0KOix4m.js"
     ]
   },
   "_logo-light-l2wwNDet.js": {
@@ -1841,25 +1851,25 @@
     "src": "resources/images/widget-img.png"
   },
   "resources/js/Pages/Admin/Dashboard.tsx": {
-    "file": "assets/Dashboard-vlYw3a8N.js",
+    "file": "assets/Dashboard-Bf1o30Dj.js",
     "name": "Dashboard",
     "src": "resources/js/Pages/Admin/Dashboard.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "_AppShellLayout-Bd43HZZL.js",
+      "_AppShellLayout-DfQ4yzwi.js",
       "_index-CLFcd7pW.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_avatar-1-PHP4S1R6.js",
       "_bootstrap-ClcOgKQg.js"
     ]
   },
   "resources/js/Pages/Admin/TenantSubscriptions.tsx": {
-    "file": "assets/TenantSubscriptions-DJVs2u1J.js",
+    "file": "assets/TenantSubscriptions-C7ii3WZU.js",
     "name": "TenantSubscriptions",
     "src": "resources/js/Pages/Admin/TenantSubscriptions.tsx",
     "isDynamicEntry": true,
@@ -1867,11 +1877,11 @@
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
       "_app-vendor-CD-HSM4U.js",
-      "_AppShellLayout-Bd43HZZL.js",
-      "_apiError-RjeG3Vkk.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_apiError-C3sgb2fG.js",
       "_notify-fMi5I614.js",
       "_index-CLFcd7pW.js",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_ui-kit-D7lob7ES.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_avatar-1-PHP4S1R6.js",
@@ -1879,7 +1889,7 @@
     ]
   },
   "resources/js/Pages/Admin/Tenants.tsx": {
-    "file": "assets/Tenants-Br3Bi5lV.js",
+    "file": "assets/Tenants-DlaQjDxi.js",
     "name": "Tenants",
     "src": "resources/js/Pages/Admin/Tenants.tsx",
     "isDynamicEntry": true,
@@ -1887,11 +1897,11 @@
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
       "_app-vendor-CD-HSM4U.js",
-      "_AppShellLayout-Bd43HZZL.js",
-      "_apiError-RjeG3Vkk.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_apiError-C3sgb2fG.js",
       "_notify-fMi5I614.js",
       "_index-CLFcd7pW.js",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_ui-kit-D7lob7ES.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_avatar-1-PHP4S1R6.js",
@@ -1899,7 +1909,7 @@
     ]
   },
   "resources/js/Pages/Auth/AcceptInvitation.tsx": {
-    "file": "assets/AcceptInvitation-CpyFIj8L.js",
+    "file": "assets/AcceptInvitation-Df_7sd53.js",
     "name": "AcceptInvitation",
     "src": "resources/js/Pages/Auth/AcceptInvitation.tsx",
     "isDynamicEntry": true,
@@ -1908,9 +1918,9 @@
       "node_modules/@inertiajs/react/dist/index.esm.js",
       "_app-vendor-CD-HSM4U.js",
       "_GuestLayout-B-VPv1kd.js",
-      "_apiError-RjeG3Vkk.js",
+      "_apiError-C3sgb2fG.js",
       "_notify-fMi5I614.js",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_ui-kit-D7lob7ES.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_bootstrap-ClcOgKQg.js"
@@ -1965,7 +1975,7 @@
     ]
   },
   "resources/js/Pages/Auth/Profile.tsx": {
-    "file": "assets/Profile-CT1Y0-fo.js",
+    "file": "assets/Profile-CcUKbjp_.js",
     "name": "Profile",
     "src": "resources/js/Pages/Auth/Profile.tsx",
     "isDynamicEntry": true,
@@ -1974,17 +1984,17 @@
       "node_modules/@inertiajs/react/dist/index.esm.js",
       "_profile-bg-XcrrQZYY.js",
       "_avatar-1-PHP4S1R6.js",
-      "_TenantLayout-TIqFhhsH.js",
+      "_TenantLayout-DB2iwJEO.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_AppShellLayout-Bd43HZZL.js",
-      "_i18n-BdIFeHfi.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_i18n-B0KOix4m.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_bootstrap-ClcOgKQg.js"
     ]
   },
   "resources/js/Pages/Auth/ProfileView.tsx": {
-    "file": "assets/ProfileView-Bjgobg2c.js",
+    "file": "assets/ProfileView-Bv83YgOQ.js",
     "name": "ProfileView",
     "src": "resources/js/Pages/Auth/ProfileView.tsx",
     "isDynamicEntry": true,
@@ -1993,11 +2003,11 @@
       "node_modules/@inertiajs/react/dist/index.esm.js",
       "_profile-bg-XcrrQZYY.js",
       "_avatar-1-PHP4S1R6.js",
-      "_TenantLayout-TIqFhhsH.js",
+      "_TenantLayout-DB2iwJEO.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_AppShellLayout-Bd43HZZL.js",
-      "_i18n-BdIFeHfi.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_i18n-B0KOix4m.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_bootstrap-ClcOgKQg.js"
     ]
@@ -2034,7 +2044,7 @@
     ]
   },
   "resources/js/Pages/Auth/Security.tsx": {
-    "file": "assets/Security-CktmW_RD.js",
+    "file": "assets/Security-DBsA6POv.js",
     "name": "Security",
     "src": "resources/js/Pages/Auth/Security.tsx",
     "isDynamicEntry": true,
@@ -2042,12 +2052,12 @@
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
       "_app-vendor-CD-HSM4U.js",
-      "_TenantLayout-TIqFhhsH.js",
+      "_TenantLayout-DB2iwJEO.js",
       "_notify-fMi5I614.js",
       "_index-CLFcd7pW.js",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_ui-kit-D7lob7ES.js",
-      "_AppShellLayout-Bd43HZZL.js",
+      "_AppShellLayout-DfQ4yzwi.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_avatar-1-PHP4S1R6.js",
       "_bootstrap-ClcOgKQg.js"
@@ -2320,7 +2330,7 @@
     ]
   },
   "resources/js/Pages/Tenant/AccessRequired.tsx": {
-    "file": "assets/AccessRequired-CmzlsrD2.js",
+    "file": "assets/AccessRequired-B3RQZnVN.js",
     "name": "AccessRequired",
     "src": "resources/js/Pages/Tenant/AccessRequired.tsx",
     "isDynamicEntry": true,
@@ -2328,50 +2338,50 @@
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
       "_maintenance-Dnc9IvGm.js",
-      "_TenantLayout-TIqFhhsH.js",
-      "_i18n-BdIFeHfi.js",
+      "_TenantLayout-DB2iwJEO.js",
+      "_i18n-B0KOix4m.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_AppShellLayout-Bd43HZZL.js",
+      "_AppShellLayout-DfQ4yzwi.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_avatar-1-PHP4S1R6.js",
       "_bootstrap-ClcOgKQg.js"
     ]
   },
   "resources/js/Pages/Tenant/Dashboard.tsx": {
-    "file": "assets/Dashboard-DhEAK3Tk.js",
+    "file": "assets/Dashboard-C6CDXhbv.js",
     "name": "Dashboard",
     "src": "resources/js/Pages/Tenant/Dashboard.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "_TenantLayout-TIqFhhsH.js",
+      "_TenantLayout-DB2iwJEO.js",
       "_index-CLFcd7pW.js",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_AppShellLayout-Bd43HZZL.js",
+      "_AppShellLayout-DfQ4yzwi.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_avatar-1-PHP4S1R6.js",
       "_bootstrap-ClcOgKQg.js"
     ]
   },
   "resources/js/Pages/Tenant/Forbidden.tsx": {
-    "file": "assets/Forbidden-BTgnlazW.js",
+    "file": "assets/Forbidden-CG_wWSY8.js",
     "name": "Forbidden",
     "src": "resources/js/Pages/Tenant/Forbidden.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "_TenantPageTitle-BN0a_Vv-.js",
-      "_TenantLayout-TIqFhhsH.js",
+      "_TenantPageTitle-COiiRnGC.js",
+      "_TenantLayout-DB2iwJEO.js",
       "_tenantRoute-BZRc2tXo.js",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_AppShellLayout-Bd43HZZL.js",
+      "_AppShellLayout-DfQ4yzwi.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_avatar-1-PHP4S1R6.js",
       "_bootstrap-ClcOgKQg.js"
@@ -2381,7 +2391,7 @@
     ]
   },
   "resources/js/Pages/Tenant/Frontend/App.tsx": {
-    "file": "assets/App-9-Fk2af5.js",
+    "file": "assets/App-T4HX7fPV.js",
     "name": "App",
     "src": "resources/js/Pages/Tenant/Frontend/App.tsx",
     "isDynamicEntry": true,
@@ -2404,7 +2414,7 @@
     ]
   },
   "resources/js/Pages/Tenant/Frontend/Components/AppNavbar.tsx": {
-    "file": "assets/AppNavbar-Dd20lKdm.js",
+    "file": "assets/AppNavbar-Dfb9oukg.js",
     "name": "AppNavbar",
     "src": "resources/js/Pages/Tenant/Frontend/Components/AppNavbar.tsx",
     "isDynamicEntry": true,
@@ -2414,7 +2424,7 @@
       "node_modules/@inertiajs/react/dist/index.esm.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_bootstrap-ClcOgKQg.js"
     ],
     "dynamicImports": [
@@ -2524,7 +2534,7 @@
     ]
   },
   "resources/js/Pages/Tenant/Frontend/Components/PremiumFinance.tsx": {
-    "file": "assets/PremiumFinance-30xl-CFK.js",
+    "file": "assets/PremiumFinance-D9Encvi5.js",
     "name": "PremiumFinance",
     "src": "resources/js/Pages/Tenant/Frontend/Components/PremiumFinance.tsx",
     "isDynamicEntry": true,
@@ -2729,337 +2739,375 @@
       "assets/logo-dark-DEgjC4YH.png"
     ]
   },
-  "resources/js/Pages/Tenant/Frontend/Layouts/MemberLayout.tsx": {
-    "file": "assets/MemberLayout-VaX0ax85.js",
-    "name": "MemberLayout",
-    "src": "resources/js/Pages/Tenant/Frontend/Layouts/MemberLayout.tsx",
-    "isDynamicEntry": true,
-    "imports": [
-      "_react-vendor-U9lOKbmj.js",
-      "node_modules/@inertiajs/react/dist/index.esm.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyFooter.tsx",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyNavbar.tsx",
-      "_app-vendor-CD-HSM4U.js",
-      "_logo-light-l2wwNDet.js",
-      "_ui-kit-D7lob7ES.js",
-      "_bootstrap-ClcOgKQg.js"
-    ]
-  },
   "resources/js/Pages/Tenant/Frontend/Member/Assets.tsx": {
-    "file": "assets/Assets-Be4fbpt3.js",
+    "file": "assets/Assets-vOTpsEnS.js",
     "name": "Assets",
     "src": "resources/js/Pages/Tenant/Frontend/Member/Assets.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
+      "_TenantMemberLayout-D_1e_W1G.js",
       "resources/js/Pages/Tenant/Frontend/Components/PremiumFileManager.tsx",
-      "resources/js/Pages/Tenant/Frontend/Layouts/MemberLayout.tsx",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_bootstrap-ClcOgKQg.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyFooter.tsx",
-      "_logo-light-l2wwNDet.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyNavbar.tsx"
+      "_TenantPageTitle-COiiRnGC.js",
+      "_tenantRoute-BZRc2tXo.js",
+      "_i18n-B0KOix4m.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_ApplicationLogo-CWYNn82d.js",
+      "_avatar-1-PHP4S1R6.js",
+      "_bootstrap-ClcOgKQg.js"
     ]
   },
   "resources/js/Pages/Tenant/Frontend/Member/Blog.tsx": {
-    "file": "assets/Blog-CH43a-Kv.js",
+    "file": "assets/Blog-CwpGgaNc.js",
     "name": "Blog",
     "src": "resources/js/Pages/Tenant/Frontend/Member/Blog.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
+      "_TenantMemberLayout-D_1e_W1G.js",
       "resources/js/Pages/Tenant/Frontend/Components/PremiumBlog.tsx",
-      "resources/js/Pages/Tenant/Frontend/Layouts/MemberLayout.tsx",
-      "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_bootstrap-ClcOgKQg.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyFooter.tsx",
-      "_logo-light-l2wwNDet.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyNavbar.tsx"
+      "_TenantPageTitle-COiiRnGC.js",
+      "_tenantRoute-BZRc2tXo.js",
+      "_i18n-B0KOix4m.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_ui-kit-D7lob7ES.js",
+      "_bootstrap-ClcOgKQg.js",
+      "_ApplicationLogo-CWYNn82d.js",
+      "_avatar-1-PHP4S1R6.js"
     ]
   },
   "resources/js/Pages/Tenant/Frontend/Member/Calendar.tsx": {
-    "file": "assets/Calendar-Dt93Pl7b.js",
+    "file": "assets/Calendar-BKlqJ5QA.js",
     "name": "Calendar",
     "src": "resources/js/Pages/Tenant/Frontend/Member/Calendar.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
+      "_TenantMemberLayout-D_1e_W1G.js",
       "resources/js/Pages/Tenant/Frontend/Components/PremiumCalendar.tsx",
-      "resources/js/Pages/Tenant/Frontend/Layouts/MemberLayout.tsx",
-      "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_bootstrap-ClcOgKQg.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyFooter.tsx",
-      "_logo-light-l2wwNDet.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyNavbar.tsx"
+      "_TenantPageTitle-COiiRnGC.js",
+      "_tenantRoute-BZRc2tXo.js",
+      "_i18n-B0KOix4m.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_ui-kit-D7lob7ES.js",
+      "_bootstrap-ClcOgKQg.js",
+      "_ApplicationLogo-CWYNn82d.js",
+      "_avatar-1-PHP4S1R6.js"
     ]
   },
   "resources/js/Pages/Tenant/Frontend/Member/Files.tsx": {
-    "file": "assets/Files-DSjILr_c.js",
+    "file": "assets/Files-BjojSHDP.js",
     "name": "Files",
     "src": "resources/js/Pages/Tenant/Frontend/Member/Files.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
+      "_TenantMemberLayout-D_1e_W1G.js",
       "resources/js/Pages/Tenant/Frontend/Components/PremiumFileManager.tsx",
-      "resources/js/Pages/Tenant/Frontend/Layouts/MemberLayout.tsx",
-      "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_bootstrap-ClcOgKQg.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyFooter.tsx",
-      "_logo-light-l2wwNDet.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyNavbar.tsx"
+      "_TenantPageTitle-COiiRnGC.js",
+      "_tenantRoute-BZRc2tXo.js",
+      "_i18n-B0KOix4m.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_ui-kit-D7lob7ES.js",
+      "_bootstrap-ClcOgKQg.js",
+      "_ApplicationLogo-CWYNn82d.js",
+      "_avatar-1-PHP4S1R6.js"
     ]
   },
   "resources/js/Pages/Tenant/Frontend/Member/Finance.tsx": {
-    "file": "assets/Finance-AecsSvb9.js",
+    "file": "assets/Finance-CYxgjlDg.js",
     "name": "Finance",
     "src": "resources/js/Pages/Tenant/Frontend/Member/Finance.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
+      "_TenantMemberLayout-D_1e_W1G.js",
       "resources/js/Pages/Tenant/Frontend/Components/PremiumFinance.tsx",
-      "resources/js/Pages/Tenant/Frontend/Layouts/MemberLayout.tsx",
-      "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_bootstrap-ClcOgKQg.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyFooter.tsx",
-      "_logo-light-l2wwNDet.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyNavbar.tsx"
+      "_TenantPageTitle-COiiRnGC.js",
+      "_tenantRoute-BZRc2tXo.js",
+      "_i18n-B0KOix4m.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_ui-kit-D7lob7ES.js",
+      "_bootstrap-ClcOgKQg.js",
+      "_ApplicationLogo-CWYNn82d.js",
+      "_avatar-1-PHP4S1R6.js"
     ]
   },
   "resources/js/Pages/Tenant/Frontend/Member/Gallery.tsx": {
-    "file": "assets/Gallery-CxSp2V5D.js",
+    "file": "assets/Gallery-DNlx-RXf.js",
     "name": "Gallery",
     "src": "resources/js/Pages/Tenant/Frontend/Member/Gallery.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
+      "_TenantMemberLayout-D_1e_W1G.js",
       "resources/js/Pages/Tenant/Frontend/Components/PremiumGallery.tsx",
-      "resources/js/Pages/Tenant/Frontend/Layouts/MemberLayout.tsx",
-      "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_bootstrap-ClcOgKQg.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyFooter.tsx",
-      "_logo-light-l2wwNDet.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyNavbar.tsx"
+      "_TenantPageTitle-COiiRnGC.js",
+      "_tenantRoute-BZRc2tXo.js",
+      "_i18n-B0KOix4m.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_ui-kit-D7lob7ES.js",
+      "_bootstrap-ClcOgKQg.js",
+      "_ApplicationLogo-CWYNn82d.js",
+      "_avatar-1-PHP4S1R6.js"
     ]
   },
   "resources/js/Pages/Tenant/Frontend/Member/Games.tsx": {
-    "file": "assets/Games-Dsz9eiro.js",
+    "file": "assets/Games-qUp7MuZX.js",
     "name": "Games",
     "src": "resources/js/Pages/Tenant/Frontend/Member/Games.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/MemberLayout.tsx",
+      "_TenantMemberLayout-D_1e_W1G.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyFooter.tsx",
-      "_logo-light-l2wwNDet.js",
-      "_bootstrap-ClcOgKQg.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyNavbar.tsx"
+      "_TenantPageTitle-COiiRnGC.js",
+      "_tenantRoute-BZRc2tXo.js",
+      "_i18n-B0KOix4m.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_ApplicationLogo-CWYNn82d.js",
+      "_avatar-1-PHP4S1R6.js",
+      "_bootstrap-ClcOgKQg.js"
     ]
   },
   "resources/js/Pages/Tenant/Frontend/Member/Health.tsx": {
-    "file": "assets/Health-DltqeOcC.js",
+    "file": "assets/Health-Cnw6ldJL.js",
     "name": "Health",
     "src": "resources/js/Pages/Tenant/Frontend/Member/Health.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
+      "_TenantMemberLayout-D_1e_W1G.js",
       "resources/js/Pages/Tenant/Frontend/Components/PremiumGrowthTracker.tsx",
-      "resources/js/Pages/Tenant/Frontend/Layouts/MemberLayout.tsx",
-      "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_bootstrap-ClcOgKQg.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyFooter.tsx",
-      "_logo-light-l2wwNDet.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyNavbar.tsx"
+      "_TenantPageTitle-COiiRnGC.js",
+      "_tenantRoute-BZRc2tXo.js",
+      "_i18n-B0KOix4m.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_ui-kit-D7lob7ES.js",
+      "_bootstrap-ClcOgKQg.js",
+      "_ApplicationLogo-CWYNn82d.js",
+      "_avatar-1-PHP4S1R6.js"
     ]
   },
   "resources/js/Pages/Tenant/Frontend/Member/Hub.tsx": {
-    "file": "assets/Hub-BYv2-gzQ.js",
+    "file": "assets/Hub-BT7S0KAK.js",
     "name": "Hub",
     "src": "resources/js/Pages/Tenant/Frontend/Member/Hub.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/MemberLayout.tsx",
+      "_TenantMemberLayout-D_1e_W1G.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyFooter.tsx",
-      "_logo-light-l2wwNDet.js",
-      "_bootstrap-ClcOgKQg.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyNavbar.tsx"
+      "_TenantPageTitle-COiiRnGC.js",
+      "_tenantRoute-BZRc2tXo.js",
+      "_i18n-B0KOix4m.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_ApplicationLogo-CWYNn82d.js",
+      "_avatar-1-PHP4S1R6.js",
+      "_bootstrap-ClcOgKQg.js"
     ]
   },
   "resources/js/Pages/Tenant/Frontend/Member/Kitchen.tsx": {
-    "file": "assets/Kitchen-Do2iJwpf.js",
+    "file": "assets/Kitchen-BBDCAMU4.js",
     "name": "Kitchen",
     "src": "resources/js/Pages/Tenant/Frontend/Member/Kitchen.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/MemberLayout.tsx",
+      "_TenantMemberLayout-D_1e_W1G.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyFooter.tsx",
-      "_logo-light-l2wwNDet.js",
-      "_bootstrap-ClcOgKQg.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyNavbar.tsx"
+      "_TenantPageTitle-COiiRnGC.js",
+      "_tenantRoute-BZRc2tXo.js",
+      "_i18n-B0KOix4m.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_ApplicationLogo-CWYNn82d.js",
+      "_avatar-1-PHP4S1R6.js",
+      "_bootstrap-ClcOgKQg.js"
     ]
   },
   "resources/js/Pages/Tenant/Frontend/Member/Leisure.tsx": {
-    "file": "assets/Leisure-DyubDM3U.js",
+    "file": "assets/Leisure-rUThI8-o.js",
     "name": "Leisure",
     "src": "resources/js/Pages/Tenant/Frontend/Member/Leisure.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
+      "_TenantMemberLayout-D_1e_W1G.js",
       "resources/js/Pages/Tenant/Frontend/Components/PremiumWishlist.tsx",
-      "resources/js/Pages/Tenant/Frontend/Layouts/MemberLayout.tsx",
-      "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_bootstrap-ClcOgKQg.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyFooter.tsx",
-      "_logo-light-l2wwNDet.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyNavbar.tsx"
+      "_TenantPageTitle-COiiRnGC.js",
+      "_tenantRoute-BZRc2tXo.js",
+      "_i18n-B0KOix4m.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_ui-kit-D7lob7ES.js",
+      "_bootstrap-ClcOgKQg.js",
+      "_ApplicationLogo-CWYNn82d.js",
+      "_avatar-1-PHP4S1R6.js"
     ]
   },
   "resources/js/Pages/Tenant/Frontend/Member/Projects.tsx": {
-    "file": "assets/Projects-B45zyq6H.js",
+    "file": "assets/Projects-PyHBxXfQ.js",
     "name": "Projects",
     "src": "resources/js/Pages/Tenant/Frontend/Member/Projects.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
+      "_TenantMemberLayout-D_1e_W1G.js",
       "resources/js/Pages/Tenant/Frontend/Components/PremiumProjects.tsx",
-      "resources/js/Pages/Tenant/Frontend/Layouts/MemberLayout.tsx",
-      "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_bootstrap-ClcOgKQg.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyFooter.tsx",
-      "_logo-light-l2wwNDet.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyNavbar.tsx"
+      "_TenantPageTitle-COiiRnGC.js",
+      "_tenantRoute-BZRc2tXo.js",
+      "_i18n-B0KOix4m.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_ui-kit-D7lob7ES.js",
+      "_bootstrap-ClcOgKQg.js",
+      "_ApplicationLogo-CWYNn82d.js",
+      "_avatar-1-PHP4S1R6.js"
     ]
   },
   "resources/js/Pages/Tenant/Frontend/Member/Rewards.tsx": {
-    "file": "assets/Rewards-DV2dVX8s.js",
+    "file": "assets/Rewards-hTfnhcT0.js",
     "name": "Rewards",
     "src": "resources/js/Pages/Tenant/Frontend/Member/Rewards.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
+      "_TenantMemberLayout-D_1e_W1G.js",
       "resources/js/Pages/Tenant/Frontend/Components/PremiumRewards.tsx",
-      "resources/js/Pages/Tenant/Frontend/Layouts/MemberLayout.tsx",
-      "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_bootstrap-ClcOgKQg.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyFooter.tsx",
-      "_logo-light-l2wwNDet.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyNavbar.tsx"
+      "_TenantPageTitle-COiiRnGC.js",
+      "_tenantRoute-BZRc2tXo.js",
+      "_i18n-B0KOix4m.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_ui-kit-D7lob7ES.js",
+      "_bootstrap-ClcOgKQg.js",
+      "_ApplicationLogo-CWYNn82d.js",
+      "_avatar-1-PHP4S1R6.js"
     ]
   },
   "resources/js/Pages/Tenant/Frontend/Member/Tasks.tsx": {
-    "file": "assets/Tasks-Xl6cR1IT.js",
+    "file": "assets/Tasks-B4GDAJgB.js",
     "name": "Tasks",
     "src": "resources/js/Pages/Tenant/Frontend/Member/Tasks.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/MemberLayout.tsx",
+      "_TenantMemberLayout-D_1e_W1G.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyFooter.tsx",
-      "_logo-light-l2wwNDet.js",
-      "_bootstrap-ClcOgKQg.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyNavbar.tsx"
+      "_TenantPageTitle-COiiRnGC.js",
+      "_tenantRoute-BZRc2tXo.js",
+      "_i18n-B0KOix4m.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_ApplicationLogo-CWYNn82d.js",
+      "_avatar-1-PHP4S1R6.js",
+      "_bootstrap-ClcOgKQg.js"
     ]
   },
   "resources/js/Pages/Tenant/Frontend/Member/UserProfile.tsx": {
-    "file": "assets/UserProfile-CUb6Xcit.js",
+    "file": "assets/UserProfile-Bsn90lKP.js",
     "name": "UserProfile",
     "src": "resources/js/Pages/Tenant/Frontend/Member/UserProfile.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/MemberLayout.tsx",
+      "_TenantMemberLayout-D_1e_W1G.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyFooter.tsx",
-      "_logo-light-l2wwNDet.js",
-      "_bootstrap-ClcOgKQg.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyNavbar.tsx"
+      "_TenantPageTitle-COiiRnGC.js",
+      "_tenantRoute-BZRc2tXo.js",
+      "_i18n-B0KOix4m.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_ApplicationLogo-CWYNn82d.js",
+      "_avatar-1-PHP4S1R6.js",
+      "_bootstrap-ClcOgKQg.js"
     ]
   },
   "resources/js/Pages/Tenant/Frontend/Member/UserSettings.tsx": {
-    "file": "assets/UserSettings-C0VpIuSR.js",
+    "file": "assets/UserSettings-BdKB3oWI.js",
     "name": "UserSettings",
     "src": "resources/js/Pages/Tenant/Frontend/Member/UserSettings.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/MemberLayout.tsx",
+      "_TenantMemberLayout-D_1e_W1G.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyFooter.tsx",
-      "_logo-light-l2wwNDet.js",
-      "_bootstrap-ClcOgKQg.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyNavbar.tsx"
+      "_TenantPageTitle-COiiRnGC.js",
+      "_tenantRoute-BZRc2tXo.js",
+      "_i18n-B0KOix4m.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_ApplicationLogo-CWYNn82d.js",
+      "_avatar-1-PHP4S1R6.js",
+      "_bootstrap-ClcOgKQg.js"
     ]
   },
   "resources/js/Pages/Tenant/Frontend/Member/Wallet.tsx": {
-    "file": "assets/Wallet-CmYVE4Zh.js",
+    "file": "assets/Wallet-cNG658t4.js",
     "name": "Wallet",
     "src": "resources/js/Pages/Tenant/Frontend/Member/Wallet.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/MemberLayout.tsx",
+      "_TenantMemberLayout-D_1e_W1G.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyFooter.tsx",
-      "_logo-light-l2wwNDet.js",
-      "_bootstrap-ClcOgKQg.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyNavbar.tsx"
+      "_TenantPageTitle-COiiRnGC.js",
+      "_tenantRoute-BZRc2tXo.js",
+      "_i18n-B0KOix4m.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_ApplicationLogo-CWYNn82d.js",
+      "_avatar-1-PHP4S1R6.js",
+      "_bootstrap-ClcOgKQg.js"
     ]
   },
   "resources/js/Pages/Tenant/Frontend/Member/WhatsApp.tsx": {
-    "file": "assets/WhatsApp-L_gyNZE6.js",
+    "file": "assets/WhatsApp-_XqMoG0N.js",
     "name": "WhatsApp",
     "src": "resources/js/Pages/Tenant/Frontend/Member/WhatsApp.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
+      "_TenantMemberLayout-D_1e_W1G.js",
       "resources/js/Pages/Tenant/Frontend/Components/PremiumWAHub.tsx",
-      "resources/js/Pages/Tenant/Frontend/Layouts/MemberLayout.tsx",
-      "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_bootstrap-ClcOgKQg.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyFooter.tsx",
-      "_logo-light-l2wwNDet.js",
-      "resources/js/Pages/Tenant/Frontend/Layouts/FamilyNavbar.tsx"
+      "_TenantPageTitle-COiiRnGC.js",
+      "_tenantRoute-BZRc2tXo.js",
+      "_i18n-B0KOix4m.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_ui-kit-D7lob7ES.js",
+      "_bootstrap-ClcOgKQg.js",
+      "_ApplicationLogo-CWYNn82d.js",
+      "_avatar-1-PHP4S1R6.js"
     ]
   },
   "resources/js/Pages/Tenant/Home.tsx": {
@@ -3078,7 +3126,7 @@
     ]
   },
   "resources/js/Pages/Tenant/Invitations/Index.tsx": {
-    "file": "assets/Index-1a5RhwmY.js",
+    "file": "assets/Index-BpWfG6ac.js",
     "name": "Index",
     "src": "resources/js/Pages/Tenant/Invitations/Index.tsx",
     "isDynamicEntry": true,
@@ -3086,22 +3134,22 @@
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
       "_app-vendor-CD-HSM4U.js",
-      "_TenantPageTitle-BN0a_Vv-.js",
-      "_TenantLayout-TIqFhhsH.js",
-      "_apiError-RjeG3Vkk.js",
-      "_invitationError-DgxK6FZK.js",
+      "_TenantPageTitle-COiiRnGC.js",
+      "_TenantLayout-DB2iwJEO.js",
+      "_apiError-C3sgb2fG.js",
+      "_invitationError-DMh477eG.js",
       "_notify-fMi5I614.js",
       "_tenantRoute-BZRc2tXo.js",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_ui-kit-D7lob7ES.js",
-      "_AppShellLayout-Bd43HZZL.js",
+      "_AppShellLayout-DfQ4yzwi.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_avatar-1-PHP4S1R6.js",
       "_bootstrap-ClcOgKQg.js"
     ]
   },
   "resources/js/Pages/Tenant/Members/Edit.tsx": {
-    "file": "assets/Edit-pFfaTy9W.js",
+    "file": "assets/Edit-rhOPg9Ag.js",
     "name": "Edit",
     "src": "resources/js/Pages/Tenant/Members/Edit.tsx",
     "isDynamicEntry": true,
@@ -3111,20 +3159,20 @@
       "_app-vendor-CD-HSM4U.js",
       "_profile-bg-XcrrQZYY.js",
       "_avatar-1-PHP4S1R6.js",
-      "_TenantPageTitle-BN0a_Vv-.js",
-      "_TenantLayout-TIqFhhsH.js",
-      "_apiError-RjeG3Vkk.js",
+      "_TenantPageTitle-COiiRnGC.js",
+      "_TenantLayout-DB2iwJEO.js",
+      "_apiError-C3sgb2fG.js",
       "_notify-fMi5I614.js",
       "_tenantRoute-BZRc2tXo.js",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_ui-kit-D7lob7ES.js",
-      "_AppShellLayout-Bd43HZZL.js",
+      "_AppShellLayout-DfQ4yzwi.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_bootstrap-ClcOgKQg.js"
     ]
   },
   "resources/js/Pages/Tenant/Members/Index.tsx": {
-    "file": "assets/Index-Dxz-30p3.js",
+    "file": "assets/Index-CwnPc3mm.js",
     "name": "Index",
     "src": "resources/js/Pages/Tenant/Members/Index.tsx",
     "isDynamicEntry": true,
@@ -3134,22 +3182,22 @@
       "_app-vendor-CD-HSM4U.js",
       "_profile-bg-XcrrQZYY.js",
       "_avatar-2-B-1-S_lh.js",
-      "_TenantPageTitle-BN0a_Vv-.js",
-      "_TenantLayout-TIqFhhsH.js",
-      "_apiError-RjeG3Vkk.js",
-      "_invitationError-DgxK6FZK.js",
+      "_TenantPageTitle-COiiRnGC.js",
+      "_TenantLayout-DB2iwJEO.js",
+      "_apiError-C3sgb2fG.js",
+      "_invitationError-DMh477eG.js",
       "_notify-fMi5I614.js",
       "_tenantRoute-BZRc2tXo.js",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_ui-kit-D7lob7ES.js",
-      "_AppShellLayout-Bd43HZZL.js",
+      "_AppShellLayout-DfQ4yzwi.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_avatar-1-PHP4S1R6.js",
       "_bootstrap-ClcOgKQg.js"
     ]
   },
   "resources/js/Pages/Tenant/Members/View.tsx": {
-    "file": "assets/View-4QaMwon3.js",
+    "file": "assets/View-CwZQwc-i.js",
     "name": "View",
     "src": "resources/js/Pages/Tenant/Members/View.tsx",
     "isDynamicEntry": true,
@@ -3158,19 +3206,19 @@
       "node_modules/@inertiajs/react/dist/index.esm.js",
       "_profile-bg-XcrrQZYY.js",
       "_avatar-1-PHP4S1R6.js",
-      "_TenantPageTitle-BN0a_Vv-.js",
-      "_TenantLayout-TIqFhhsH.js",
+      "_TenantPageTitle-COiiRnGC.js",
+      "_TenantLayout-DB2iwJEO.js",
       "_tenantRoute-BZRc2tXo.js",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_AppShellLayout-Bd43HZZL.js",
+      "_AppShellLayout-DfQ4yzwi.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_bootstrap-ClcOgKQg.js"
     ]
   },
   "resources/js/Pages/Tenant/Roles/Index.tsx": {
-    "file": "assets/Index-8ekaE8uZ.js",
+    "file": "assets/Index-DSQbaE6p.js",
     "name": "Index",
     "src": "resources/js/Pages/Tenant/Roles/Index.tsx",
     "isDynamicEntry": true,
@@ -3178,51 +3226,51 @@
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
       "_app-vendor-CD-HSM4U.js",
-      "_TenantPageTitle-BN0a_Vv-.js",
-      "_TenantLayout-TIqFhhsH.js",
-      "_apiError-RjeG3Vkk.js",
+      "_TenantPageTitle-COiiRnGC.js",
+      "_TenantLayout-DB2iwJEO.js",
+      "_apiError-C3sgb2fG.js",
       "_notify-fMi5I614.js",
       "_tenantRoute-BZRc2tXo.js",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_ui-kit-D7lob7ES.js",
-      "_AppShellLayout-Bd43HZZL.js",
+      "_AppShellLayout-DfQ4yzwi.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_avatar-1-PHP4S1R6.js",
       "_bootstrap-ClcOgKQg.js"
     ]
   },
   "resources/js/Pages/Tenant/Selector.tsx": {
-    "file": "assets/Selector-CnxNVIcq.js",
+    "file": "assets/Selector-D4TDyfLV.js",
     "name": "Selector",
     "src": "resources/js/Pages/Tenant/Selector.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "_TenantLayout-TIqFhhsH.js",
+      "_TenantLayout-DB2iwJEO.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_AppShellLayout-Bd43HZZL.js",
-      "_i18n-BdIFeHfi.js",
+      "_AppShellLayout-DfQ4yzwi.js",
+      "_i18n-B0KOix4m.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_avatar-1-PHP4S1R6.js",
       "_bootstrap-ClcOgKQg.js"
     ]
   },
   "resources/js/Pages/Tenant/Settings/Billing.tsx": {
-    "file": "assets/Billing-f6xG1RhT.js",
+    "file": "assets/Billing-BNVbdcrh.js",
     "name": "Billing",
     "src": "resources/js/Pages/Tenant/Settings/Billing.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "_TenantLayout-TIqFhhsH.js",
+      "_TenantLayout-DB2iwJEO.js",
       "resources/js/Pages/Tenant/Settings/shared.tsx",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_AppShellLayout-Bd43HZZL.js",
+      "_AppShellLayout-DfQ4yzwi.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_avatar-1-PHP4S1R6.js",
       "_index-CLFcd7pW.js",
@@ -3230,19 +3278,19 @@
     ]
   },
   "resources/js/Pages/Tenant/Settings/Branding.tsx": {
-    "file": "assets/Branding-BOxFZXL-.js",
+    "file": "assets/Branding-CFFjg0NB.js",
     "name": "Branding",
     "src": "resources/js/Pages/Tenant/Settings/Branding.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "_TenantLayout-TIqFhhsH.js",
+      "_TenantLayout-DB2iwJEO.js",
       "resources/js/Pages/Tenant/Settings/shared.tsx",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_AppShellLayout-Bd43HZZL.js",
+      "_AppShellLayout-DfQ4yzwi.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_avatar-1-PHP4S1R6.js",
       "_index-CLFcd7pW.js",
@@ -3250,19 +3298,19 @@
     ]
   },
   "resources/js/Pages/Tenant/Settings/Localization.tsx": {
-    "file": "assets/Localization-Di0AxhOV.js",
+    "file": "assets/Localization-C6WOIJ5R.js",
     "name": "Localization",
     "src": "resources/js/Pages/Tenant/Settings/Localization.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "_TenantLayout-TIqFhhsH.js",
+      "_TenantLayout-DB2iwJEO.js",
       "resources/js/Pages/Tenant/Settings/shared.tsx",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_AppShellLayout-Bd43HZZL.js",
+      "_AppShellLayout-DfQ4yzwi.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_avatar-1-PHP4S1R6.js",
       "_index-CLFcd7pW.js",
@@ -3270,19 +3318,19 @@
     ]
   },
   "resources/js/Pages/Tenant/Settings/Profile.tsx": {
-    "file": "assets/Profile-DiNMX87e.js",
+    "file": "assets/Profile-Bl4-ZFyy.js",
     "name": "Profile",
     "src": "resources/js/Pages/Tenant/Settings/Profile.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
-      "_TenantLayout-TIqFhhsH.js",
+      "_TenantLayout-DB2iwJEO.js",
       "resources/js/Pages/Tenant/Settings/shared.tsx",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_AppShellLayout-Bd43HZZL.js",
+      "_AppShellLayout-DfQ4yzwi.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_avatar-1-PHP4S1R6.js",
       "_index-CLFcd7pW.js",
@@ -3290,7 +3338,7 @@
     ]
   },
   "resources/js/Pages/Tenant/Settings/shared.tsx": {
-    "file": "assets/shared-kmhjhcYq.js",
+    "file": "assets/shared-CaattRdc.js",
     "name": "shared",
     "src": "resources/js/Pages/Tenant/Settings/shared.tsx",
     "isDynamicEntry": true,
@@ -3298,14 +3346,14 @@
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
       "_index-CLFcd7pW.js",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
       "_bootstrap-ClcOgKQg.js"
     ]
   },
   "resources/js/Pages/Tenant/UpgradeRequired.tsx": {
-    "file": "assets/UpgradeRequired-zMOfWeyl.js",
+    "file": "assets/UpgradeRequired-03uwS_K8.js",
     "name": "UpgradeRequired",
     "src": "resources/js/Pages/Tenant/UpgradeRequired.tsx",
     "isDynamicEntry": true,
@@ -3313,20 +3361,20 @@
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
       "_maintenance-Dnc9IvGm.js",
-      "_TenantPageTitle-BN0a_Vv-.js",
-      "_TenantLayout-TIqFhhsH.js",
+      "_TenantPageTitle-COiiRnGC.js",
+      "_TenantLayout-DB2iwJEO.js",
       "_tenantRoute-BZRc2tXo.js",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_ui-kit-D7lob7ES.js",
       "_app-vendor-CD-HSM4U.js",
-      "_AppShellLayout-Bd43HZZL.js",
+      "_AppShellLayout-DfQ4yzwi.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_avatar-1-PHP4S1R6.js",
       "_bootstrap-ClcOgKQg.js"
     ]
   },
   "resources/js/Pages/Tenant/WhatsApp/Chats.tsx": {
-    "file": "assets/Chats-B15r5XBJ.js",
+    "file": "assets/Chats-CHiJWmFS.js",
     "name": "Chats",
     "src": "resources/js/Pages/Tenant/WhatsApp/Chats.tsx",
     "isDynamicEntry": true,
@@ -3334,13 +3382,13 @@
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
       "_app-vendor-CD-HSM4U.js",
-      "_TenantLayout-TIqFhhsH.js",
-      "_apiError-RjeG3Vkk.js",
+      "_TenantLayout-DB2iwJEO.js",
+      "_apiError-C3sgb2fG.js",
       "_notify-fMi5I614.js",
       "_tenantRoute-BZRc2tXo.js",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_ui-kit-D7lob7ES.js",
-      "_AppShellLayout-Bd43HZZL.js",
+      "_AppShellLayout-DfQ4yzwi.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_avatar-1-PHP4S1R6.js",
       "_bootstrap-ClcOgKQg.js"
@@ -3350,7 +3398,7 @@
     ]
   },
   "resources/js/Pages/Tenant/WhatsApp/Settings.tsx": {
-    "file": "assets/Settings-DWLZY-6z.js",
+    "file": "assets/Settings-iiIz735d.js",
     "name": "Settings",
     "src": "resources/js/Pages/Tenant/WhatsApp/Settings.tsx",
     "isDynamicEntry": true,
@@ -3358,28 +3406,28 @@
       "_react-vendor-U9lOKbmj.js",
       "node_modules/@inertiajs/react/dist/index.esm.js",
       "_app-vendor-CD-HSM4U.js",
-      "_TenantPageTitle-BN0a_Vv-.js",
-      "_TenantLayout-TIqFhhsH.js",
-      "_apiError-RjeG3Vkk.js",
+      "_TenantPageTitle-COiiRnGC.js",
+      "_TenantLayout-DB2iwJEO.js",
+      "_apiError-C3sgb2fG.js",
       "_notify-fMi5I614.js",
       "_tenantRoute-BZRc2tXo.js",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_ui-kit-D7lob7ES.js",
-      "_AppShellLayout-Bd43HZZL.js",
+      "_AppShellLayout-DfQ4yzwi.js",
       "_ApplicationLogo-CWYNn82d.js",
       "_avatar-1-PHP4S1R6.js",
       "_bootstrap-ClcOgKQg.js"
     ]
   },
   "resources/js/app.tsx": {
-    "file": "assets/app-Bll3kdyM.js",
+    "file": "assets/app-EhABN19b.js",
     "name": "app",
     "src": "resources/js/app.tsx",
     "isEntry": true,
     "imports": [
       "_react-vendor-U9lOKbmj.js",
       "_app-vendor-CD-HSM4U.js",
-      "_i18n-BdIFeHfi.js",
+      "_i18n-B0KOix4m.js",
       "_bootstrap-ClcOgKQg.js",
       "node_modules/@inertiajs/react/dist/index.esm.js"
     ],
@@ -3441,7 +3489,6 @@
       "resources/js/Pages/Tenant/Frontend/Landing.tsx",
       "resources/js/Pages/Tenant/Frontend/Layouts/FamilyFooter.tsx",
       "resources/js/Pages/Tenant/Frontend/Layouts/FamilyNavbar.tsx",
-      "resources/js/Pages/Tenant/Frontend/Layouts/MemberLayout.tsx",
       "resources/js/Pages/Tenant/Frontend/Member/Assets.tsx",
       "resources/js/Pages/Tenant/Frontend/Member/Blog.tsx",
       "resources/js/Pages/Tenant/Frontend/Member/Calendar.tsx",

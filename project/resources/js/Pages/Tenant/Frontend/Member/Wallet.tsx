@@ -1,32 +1,22 @@
 import React from 'react';
-import { Container, Row, Col, Badge } from 'react-bootstrap';
+import { Row, Col, Card } from 'react-bootstrap';
 
-import MemberLayout from '../Layouts/MemberLayout';
+import MemberPage from '../../../../Components/Common/MemberPage';
+import TenantMemberLayout from '../../../../Layouts/TenantMemberLayout';
 
 const fmt = (n: number) => new Intl.NumberFormat('id-ID', {style:'currency',currency:'IDR',maximumFractionDigits:0}).format(n);
 
 interface Props { tenantName: string; tenantSlug: string; member?: any; demo: any; }
 
-const WalletPage: React.FC<Props> = ({ tenantName, tenantSlug, member, demo }) => (
-    <MemberLayout title="Dompet Anak" tenantName={tenantName} tenantSlug={tenantSlug} memberName={member?.user?.name}>
-        <section className="section nft-hero" style={{paddingTop:'80px',paddingBottom:'40px'}}>
-            <div className="bg-overlay"></div>
-            <Container>
-                <div className="text-center">
-                    <Badge bg="info-subtle" text="info" className="mb-2 px-3 py-2 fs-12 rounded-pill">
-                        <i className="ri-wallet-3-line me-1"></i>PRD Modul B
-                    </Badge>
-                    <h2 className="text-white fw-bold mb-2">Dompet Digital Anak</h2>
-                    <p className="text-white-50">Saldo poin, uang saku, dan riwayat reward per anggota</p>
-                </div>
-            </Container>
-        </section>
-        <section className="section">
-            <Container>
-                <Row className="g-4 justify-content-center">
-                    {demo.finance.kids_wallet.map((kid: any, i: number) => (
-                        <Col md={5} key={i}>
-                            <div className="p-4 rounded-4 text-center"
+const WalletPage: React.FC<Props> = ({ demo }) => (
+
+    <MemberPage title="Dompet Anak" parentLabel="Tugas & Reward">
+        <Row className="g-4 justify-content-center">
+            {demo.finance.kids_wallet.map((kid: any, i: number) => (
+                <Col md={5} key={i}>
+                    <Card className="border-0 shadow-sm overflow-hidden h-100">
+                        <Card.Body className="p-0">
+                            <div className="p-4 text-center text-white"
                                 style={{background:'linear-gradient(135deg,#405189 0%,#0ab39c 100%)'}}>
                                 <div className="rounded-circle bg-white d-flex align-items-center justify-content-center mx-auto mb-3"
                                     style={{width:72,height:72}}>
@@ -50,18 +40,20 @@ const WalletPage: React.FC<Props> = ({ tenantName, tenantSlug, member, demo }) =
                                     ))}
                                 </Row>
                             </div>
-                        </Col>
-                    ))}
-                    <Col xs={12} className="text-center mt-2">
-                        <div className="p-3 bg-light rounded-3">
-                            <i className="ri-whatsapp-line text-success fs-20 me-2"></i>
-                            <span className="text-muted">Ketik <code>poin [nama]</code> di WhatsApp untuk cek realtime</span>
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
-        </section>
-    </MemberLayout>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            ))}
+            <Col xs={12} className="text-center mt-4">
+                <div className="p-3 bg-light rounded-3 d-inline-block">
+                    <i className="ri-whatsapp-line text-success fs-20 me-2 align-middle"></i>
+                    <span className="text-muted">Ketik <code className="mx-1">poin [nama]</code> di WhatsApp untuk cek realtime</span>
+                </div>
+            </Col>
+        </Row>
+    </MemberPage>
 );
+
+(WalletPage as any).layout = (page: React.ReactNode) => <TenantMemberLayout>{page}</TenantMemberLayout>;
 
 export default WalletPage;

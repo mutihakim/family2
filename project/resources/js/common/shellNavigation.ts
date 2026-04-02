@@ -120,6 +120,138 @@ export function buildShellNavigation(props: SharedPageProps): ShellNavSection[] 
         ];
     }
 
+    // --- MEMBER HUB AREA ---
+    // Grouped for horizontal nav (HorizontalNavMenu shows 6 items, rest in "More").
+    // Structure: 1 section → items with children = horizontal dropdown groups.
+    if (area === 'member') {
+        return [
+            {
+                id: 'member-nav',
+                titleKey: 'layout.shell.nav.sections.workspace',
+                icon: 'ri-home-heart-line',
+                items: [
+                    // Dashboard — direct link
+                    {
+                        id: 'member-hub',
+                        labelKey: 'layout.shell.nav.items.member_hub',
+                        href: '/hub',
+                        icon: 'ri-home-heart-line',
+                        match: (p: string) => p === '/hub' || p === '/',
+                    },
+                    // Modul A — Perencanaan Waktu & Proyek
+                    {
+                        id: 'member-planning',
+                        labelKey: 'layout.shell.nav.items.member_planning',
+                        icon: 'ri-calendar-2-line',
+                        children: [
+                            { id: 'member-calendar', labelKey: 'layout.shell.nav.items.member_calendar', href: '/calendar', icon: 'ri-calendar-2-line', match: startsWith('/calendar') },
+                            { id: 'member-projects', labelKey: 'layout.shell.nav.items.member_projects', href: '/projects', icon: 'ri-kanban-view', match: startsWith('/projects') },
+                        ],
+                    },
+                    // Modul B — Tugas & Gamifikasi
+                    {
+                        id: 'member-tasks-group',
+                        labelKey: 'layout.shell.nav.items.member_tasks_rewards',
+                        icon: 'ri-trophy-line',
+                        children: [
+                            { id: 'member-tasks',   labelKey: 'layout.shell.nav.items.member_tasks',   href: '/tasks',   icon: 'ri-checkbox-multiple-line', match: startsWith('/tasks') },
+                            { id: 'member-rewards', labelKey: 'layout.shell.nav.items.member_rewards', href: '/rewards', icon: 'ri-trophy-line', match: startsWith('/rewards') },
+                            { id: 'member-wallet',  labelKey: 'layout.shell.nav.items.member_wallet',  href: '/wallet',  icon: 'ri-wallet-3-line', match: startsWith('/wallet') },
+                        ],
+                    },
+                    // Modul C — Keuangan
+                    {
+                        id: 'member-finance',
+                        labelKey: 'layout.shell.nav.items.member_finance',
+                        href: '/finance',
+                        icon: 'ri-money-dollar-circle-line',
+                        match: startsWith('/finance'),
+                    },
+                    // Modul D — Dapur & Belanja
+                    {
+                        id: 'member-kitchen-group',
+                        labelKey: 'layout.shell.nav.items.member_kitchen',
+                        icon: 'ri-restaurant-2-line',
+                        children: [
+                            { id: 'member-kitchen',  labelKey: 'layout.shell.nav.items.member_meal_planner', href: '/kitchen',  icon: 'ri-restaurant-2-line',  match: startsWith('/kitchen') },
+                            { id: 'member-shopping', labelKey: 'layout.shell.nav.items.member_shopping',     href: '/shopping', icon: 'ri-shopping-cart-line', match: startsWith('/shopping') },
+                        ],
+                    },
+                    // Modul E — Kesehatan & Tumbuh Kembang
+                    {
+                        id: 'member-health-group',
+                        labelKey: 'layout.shell.nav.items.member_health',
+                        icon: 'ri-heart-pulse-line',
+                        children: [
+                            { id: 'member-health',   labelKey: 'layout.shell.nav.items.member_growth_tracker', href: '/health',   icon: 'ri-seedling-line',        match: startsWith('/health') },
+                            { id: 'member-medical',  labelKey: 'layout.shell.nav.items.member_medical',        href: '/medical',  icon: 'ri-medicine-bottle-line', match: startsWith('/medical') },
+                            { id: 'member-records',  labelKey: 'layout.shell.nav.items.member_records',        href: '/records',  icon: 'ri-file-medical-line',    match: startsWith('/records') },
+                        ],
+                    },
+                    // Modul F — Aset & Inventaris (masuk More dropdown di horizontal)
+                    {
+                        id: 'member-assets-group',
+                        labelKey: 'layout.shell.nav.items.member_assets',
+                        icon: 'ri-home-gear-line',
+                        children: [
+                            { id: 'member-assets',      labelKey: 'layout.shell.nav.items.member_info_vault',  href: '/assets',      icon: 'ri-home-gear-line', match: startsWith('/assets') },
+                            { id: 'member-inventory',   labelKey: 'layout.shell.nav.items.member_inventory',   href: '/inventory',   icon: 'ri-archive-2-line', match: startsWith('/inventory') },
+                            { id: 'member-dimensions',  labelKey: 'layout.shell.nav.items.member_dimensions',  href: '/dimensions',  icon: 'ri-ruler-2-line',   match: startsWith('/dimensions') },
+                        ],
+                    },
+                    // Modul G — Liburan & Rekreasi
+                    {
+                        id: 'member-leisure-group',
+                        labelKey: 'layout.shell.nav.items.member_leisure',
+                        icon: 'ri-earth-line',
+                        children: [
+                            { id: 'member-leisure',  labelKey: 'layout.shell.nav.items.member_wishlist',  href: '/leisure',  icon: 'ri-heart-3-line',    match: startsWith('/leisure') },
+                            { id: 'member-vacation', labelKey: 'layout.shell.nav.items.member_vacation',  href: '/vacation', icon: 'ri-suitcase-3-line', match: startsWith('/vacation') },
+                        ],
+                    },
+                    // Modul H — Game Center
+                    {
+                        id: 'member-games',
+                        labelKey: 'layout.shell.nav.items.member_games',
+                        href: '/games',
+                        icon: 'ri-gamepad-line',
+                        match: startsWith('/games'),
+                    },
+                    // Modul I — WhatsApp
+                    {
+                        id: 'member-whatsapp',
+                        labelKey: 'layout.shell.nav.items.member_whatsapp',
+                        href: '/whatsapp',
+                        icon: 'ri-whatsapp-line',
+                        match: startsWith('/whatsapp'),
+                        badge: { labelKey: 'layout.shell.badges.live', tone: 'success' },
+                    },
+                    // Konten (Gallery, Blog, Files)
+                    {
+                        id: 'member-content-group',
+                        labelKey: 'layout.shell.nav.items.member_content',
+                        icon: 'ri-image-2-line',
+                        children: [
+                            { id: 'member-gallery', labelKey: 'layout.shell.nav.items.member_gallery', href: '/gallery', icon: 'ri-image-line',   match: startsWith('/gallery') },
+                            { id: 'member-blog',    labelKey: 'layout.shell.nav.items.member_blog',    href: '/blog',    icon: 'ri-article-line', match: startsWith('/blog') },
+                            { id: 'member-files',   labelKey: 'layout.shell.nav.items.member_files',   href: '/files',   icon: 'ri-folder-3-line', match: startsWith('/files') },
+                        ],
+                    },
+                    // Akun
+                    {
+                        id: 'member-account-group',
+                        labelKey: 'layout.shell.nav.items.my_account',
+                        icon: 'ri-account-circle-line',
+                        children: [
+                            { id: 'member-me',       labelKey: 'layout.shell.nav.items.profile',      href: '/me',              icon: 'ri-user-line',      match: startsWith('/me') },
+                            { id: 'member-to-admin', labelKey: 'layout.shell.nav.items.admin_panel',  href: '/admin/dashboard', icon: 'ri-settings-4-line', match: startsWith('/admin/dashboard') },
+                        ],
+                    },
+                ],
+            },
+        ];
+    }
+
     const workspaceItems: ShellNavItem[] = [
         lockedItem(
             'tenant-dashboard',

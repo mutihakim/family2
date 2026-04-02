@@ -1,4 +1,4 @@
-export type AppArea = 'tenant' | 'admin';
+export type AppArea = 'tenant' | 'admin' | 'member';
 
 export type AppLayoutType = 'vertical' | 'horizontal' | 'twocolumn' | 'semibox';
 export type ShellColorMode = 'light' | 'dark';

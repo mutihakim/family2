@@ -22,6 +22,8 @@ import AppShellSidebar from './AppShellSidebar';
 
 type Props = {
     children: React.ReactNode;
+    lockPreferences?: Partial<AppShellPreferences>;
+    hideCustomizer?: boolean;
 };
 
 function syncResponsiveSidebar(preferences: AppShellPreferences) {
@@ -67,13 +69,21 @@ function AppShellLayoutInner({
     props,
     initialPreferences,
     initialUiPreferences,
+    lockPreferences,
+    hideCustomizer,
 }: {
     children: React.ReactNode;
     props: SharedPageProps;
     initialPreferences: AppShellPreferences;
     initialUiPreferences: UiPreferences;
+    lockPreferences?: Partial<AppShellPreferences>;
+    hideCustomizer?: boolean;
 }) {
-    const [preferences, setPreferences] = useState<AppShellPreferences>(initialPreferences);
+    const lockedPrefs = useMemo(() => lockPreferences ?? {}, [lockPreferences]);
+    const [preferences, setPreferences] = useState<AppShellPreferences>({
+        ...initialPreferences,
+        ...lockedPrefs,
+    });
     const [customizerOpen, setCustomizerOpen] = useState(false);
     const [headerClass, setHeaderClass] = useState('');
     const [showPreloader, setShowPreloader] = useState(initialPreferences.preloader === 'enable');
@@ -160,6 +170,16 @@ function AppShellLayoutInner({
             return;
         }
 
+        // Don't save locked fields — only persist what the user can actually change
+        const hasUnlockedChanges = Object.keys(payload.appShell).some(
+            (key) => !(key in lockedPrefs) && (payload.appShell as Record<string, unknown>)[key] !==
+                (JSON.parse(lastSaved.current) as typeof payload).appShell[key as keyof typeof payload.appShell]
+        );
+
+        if (!hasUnlockedChanges) {
+            return;
+        }
+
         if (saveTimer.current) {
             clearTimeout(saveTimer.current);
         }
@@ -177,7 +197,14 @@ function AppShellLayoutInner({
                 clearTimeout(saveTimer.current);
             }
         };
-    }, [initialUiPreferences, preferences]);
+    }, [initialUiPreferences, preferences, lockedPrefs]);
+
+    const setPreferencesLocked = (updater: AppShellPreferences | ((p: AppShellPreferences) => AppShellPreferences)) => {
+        setPreferences((current) => {
+            const next = typeof updater === 'function' ? updater(current) : updater;
+            return { ...next, ...lockedPrefs };
+        });
+    };
 
     const toggleHamburger = () => {
         const windowSize = document.documentElement.clientWidth;
@@ -245,7 +272,8 @@ function AppShellLayoutInner({
                 <AppShellHeader
                     headerClass={headerClass}
                     preferences={preferences}
-                    onToggleTheme={(mode) => setPreferences((current) => ({ ...current, layoutModeType: mode }))}
+                    hideCustomizer={hideCustomizer}
+                    onToggleTheme={(mode) => setPreferencesLocked((current) => ({ ...current, layoutModeType: mode }))}
                     onOpenCustomizer={() => setCustomizerOpen(true)}
                     onToggleHamburger={toggleHamburger}
                 />
@@ -296,24 +324,29 @@ function AppShellLayoutInner({
                 </div>
             </div>
 
-            <AppShellCustomizer
-                show={customizerOpen}
-                preferences={preferences}
-                onOpen={() => setCustomizerOpen(true)}
-                onClose={() => setCustomizerOpen(false)}
-                onChange={(patch) => setPreferences((current) => ({ ...current, ...patch }))}
-            />
+            {!hideCustomizer ? (
+                <AppShellCustomizer
+                    show={customizerOpen}
+                    preferences={preferences}
+                    onOpen={() => setCustomizerOpen(true)}
+                    onClose={() => setCustomizerOpen(false)}
+                    onChange={(patch) => setPreferencesLocked((current) => ({ ...current, ...patch }))}
+                />
+            ) : null}
         </>
     );
 }
 
-export default function AppShellLayout({ children }: Props) {
+export default function AppShellLayout({ children, lockPreferences, hideCustomizer }: Props) {
     const { props } = usePage<SharedPageProps>();
     const initialUiPreferences = useMemo(
         () => normalizeUiPreferences(props.auth?.ui_preferences),
         [props.auth?.ui_preferences]
     );
-    const initialPreferences = initialUiPreferences.appShell;
+    const initialPreferences = useMemo(() => ({
+        ...initialUiPreferences.appShell,
+        ...(lockPreferences ?? {}),
+    }), [initialUiPreferences.appShell, lockPreferences]);
     const shellStateKey = useMemo(
         () => JSON.stringify(serializeAppShellPreferences(initialPreferences)),
         [initialPreferences]
@@ -325,6 +358,8 @@ export default function AppShellLayout({ children }: Props) {
             props={props}
             initialPreferences={initialPreferences}
             initialUiPreferences={initialUiPreferences}
+            lockPreferences={lockPreferences}
+            hideCustomizer={hideCustomizer}
         >
             {children}
         </AppShellLayoutInner>

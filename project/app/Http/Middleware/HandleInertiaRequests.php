@@ -54,7 +54,7 @@ class HandleInertiaRequests extends Middleware
         return [
             ...parent::share($request),
             'app' => [
-                'area' => $isAdminArea ? 'admin' : 'tenant',
+                'area' => $this->resolveArea($request, $tenant),
                 'branding' => $this->getBranding($tenant),
             ],
             'auth' => [
@@ -160,6 +160,37 @@ class HandleInertiaRequests extends Middleware
         $centralDomains = config('tenancy.central_domains', []);
         $isCentralDomain = in_array($host, $centralDomains);
         return ($request->is('admin') || $request->is('admin/*')) && $isCentralDomain;
+    }
+
+    /**
+     * Resolve the application area for the current request.
+     *
+     * - 'admin'  → /admin/* on CENTRAL domain only (super admin)
+     * - 'tenant' → /admin/* on tenant subdomain (tenant admin dashboard)
+     * - 'member' → any non-admin path on tenant subdomain (member hub)
+     * - 'tenant' → everything else (central domain, profile, etc.)
+     */
+    protected function resolveArea(Request $request, ?Tenant $tenant): string
+    {
+        $isCentral = in_array($request->getHost(), config('tenancy.central_domains', []));
+        $isAdminPath = $request->is('admin') || $request->is('admin/*');
+
+        // Super admin area: /admin/* on central domain only
+        if ($isAdminPath && $isCentral) {
+            return 'admin';
+        }
+
+        // Tenant admin area: /admin/* on tenant subdomain → keep 'tenant' (existing behaviour)
+        if ($isAdminPath) {
+            return 'tenant';
+        }
+
+        // Member hub: any non-admin path on a tenant subdomain
+        if ($tenant && !$isCentral) {
+            return 'member';
+        }
+
+        return 'tenant';
     }
 
     /**

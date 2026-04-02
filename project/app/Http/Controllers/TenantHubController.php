@@ -32,9 +32,13 @@ class TenantHubController extends Controller
 
     public function index(Request $request): mixed
     {
-        // Hub is the root / — redirect there
-        $tenant = tenant();
-        return redirect("https://{$tenant->slug}.appsah.my.id/");
+        // Hub is the member home — redirect to /hub
+        return redirect('/hub');
+    }
+
+    public function hub(Request $request): Response
+    {
+        return Inertia::render('Tenant/Frontend/Member/Hub', $this->baseProps($request));
     }
 
     public function calendar(Request $request): Response

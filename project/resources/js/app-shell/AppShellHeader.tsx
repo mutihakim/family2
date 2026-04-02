@@ -13,6 +13,7 @@ import { AppShellPreferences, SharedPageProps } from '../types/page';
 type Props = {
     headerClass: string;
     preferences: AppShellPreferences;
+    hideCustomizer?: boolean;
     onToggleTheme: (mode: 'light' | 'dark') => void;
     onOpenCustomizer: () => void;
     onToggleHamburger: () => void;
@@ -37,6 +38,7 @@ function resolveHomeLink(props: SharedPageProps) {
 export default function AppShellHeader({
     headerClass,
     preferences,
+    hideCustomizer,
     onToggleTheme,
     onOpenCustomizer,
     onToggleHamburger,
@@ -141,17 +143,19 @@ export default function AppShellHeader({
                         <LanguageDropdown />
                         <LightDark layoutMode={preferences.layoutModeType} onChangeLayoutMode={onToggleTheme} />
 
-                        <div className="ms-1 header-item d-none d-sm-flex">
-                            <button
-                                type="button"
-                                className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
-                                aria-label={t('layout.shell.topbar.open_customizer')}
-                                title={t('layout.shell.topbar.open_customizer')}
-                                onClick={onOpenCustomizer}
-                            >
-                                <i className="mdi mdi-cog-outline fs-22"></i>
-                            </button>
-                        </div>
+                        {!hideCustomizer ? (
+                            <div className="ms-1 header-item d-none d-sm-flex">
+                                <button
+                                    type="button"
+                                    className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                    aria-label={t('layout.shell.topbar.open_customizer')}
+                                    title={t('layout.shell.topbar.open_customizer')}
+                                    onClick={onOpenCustomizer}
+                                >
+                                    <i className="mdi mdi-cog-outline fs-22"></i>
+                                </button>
+                            </div>
+                        ) : null}
 
                         <ProfileDropdown />
                     </div>

@@ -44,7 +44,7 @@ Route::middleware([
     Route::domain('{tenant}.appsah.my.id')
         ->middleware(['auth', 'verified', 'tenant.resolve'])
         ->group(function () {
-            Route::get('/hub',       [TenantHubController::class, 'index'])->name('tenant.hub');
+            Route::get('/hub',       [TenantHubController::class, 'hub'])->name('tenant.hub');
             Route::get('/calendar',  [TenantHubController::class, 'calendar'])->name('tenant.calendar');
             Route::get('/projects',  [TenantHubController::class, 'projects'])->name('tenant.projects');
             Route::get('/tasks',     [TenantHubController::class, 'tasks'])->name('tenant.tasks');
